@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>OurBlog</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__title">
+        <%= link_to "Our Blog", '#', class: "header__title--text" %>
+      </div>
+      <div class="header__right">
+        <%= link_to "新規投稿", '#', class: "header__right--btn" %>
+      </div>
+    </header>
+    <div class="contents">
+      <%= yield %>
+    </div>
+  </body>
+</html>
