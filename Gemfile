@@ -64,3 +64,4 @@ gem 'haml-rails'
 gem "font-awesome-sass"
 gem 'pry-rails'
 gem 'bootstrap', '~> 4.1.1'
+gem 'devise'
