@@ -2,7 +2,7 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title OurBlog
+    %title Mealcoupon
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -10,9 +10,10 @@
   %body
     %header.header
       .header__title
-        = link_to "Our Blog", root_path, class: "header__title--text"
+        = link_to "Mealcoupon", root_path, class: "header__title--text"
       .header__right
         - if user_signed_in?
+          = link_to current_user.name, user_path(current_user), class: "header__right--btn"
           = link_to "新規投稿", new_post_path, class: "header__right--btn"
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
         - else
