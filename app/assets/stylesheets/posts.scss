@@ -1,23 +1,27 @@
 body{
-  background-color: #f6f6f6;
+  // background-color: #f6f6f6;
   min-width: 650px;
   .header{
-    height: 56px;
+    height: 80px;
     width: 100%;
     padding: 0 150px;
-    background-color: #55c500;
+    background-color: #FF1644;
     color: #fff;
     display: flex;
     justify-content: space-between;
     &__title{
-      font-size: 30px;
-      line-height: 56px;
+      font-size: 35px;
+      font-weight: bold;
+      line-height: 80px;
       &--text{
         text-decoration: none;
         color: #fff;
       }
     }
     &__right{
+      font-size: 20px;
+      font-weight: lighter;
+      line-height: 80px;
       &--btn{
         text-decoration: none;
         line-height: 56px;
@@ -145,3 +149,5 @@ body{
     padding: 15px 30px;
   }
 }
+
+
