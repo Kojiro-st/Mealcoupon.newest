@@ -13,7 +13,8 @@
 .content
   .content__left
     .content__left--image
-      = post.image
+      -# %img(src="post.image.url" class="image2" alt="")/
+      = image_tag post.image.url, class: 'image2'
     .content__left--coupon
       = post.couponcode
   .content__right
