@@ -13,15 +13,15 @@
 .content
   .content__left
     .content__left--image
-      = link_to post.image, post_path(post.id), class: "content__right__top--title"
+      = post.image
     .content__left--coupon
-      = link_to post.couponcode, post_path(post.id), class: "content__right__top--title"
+      = post.couponcode
   .content__right
     .content__right__name
-      = link_to post.shopname, post_path(post.id), class: "content__right__top--title"
+      = post.shopname
     .content__right__address
-      = link_to post.address, post_path(post.id), class: "content__right__top--title"
+      = post.address
       -# = link_to post.user.name, user_path(post.user), class: "content__right__bottom--userName--btn"(住所挿入)
     .content__right__date
-      = link_to post.expirydate, post_path(post.id), class: "content__right__top--title"
+      = post.expirydate
       -# = post.created_at(有効期限挿入)

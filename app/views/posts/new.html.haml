@@ -1,9 +1,9 @@
 .content__title
   new coupon
 = form_with model: @post, class: :form, local: true do |form|
-  = form.text_field :image, placeholder: :クーポンイメージ, class: :form__title
+  = form.file_field :image, placeholder: :クーポンイメージ, class: :form__title
   = form.text_field :couponcode, placeholder: :クーポンコード, class: :form__title
-  = form.text_field :shopname, placeholder: :店名, class: :form__title
+  = form.text_field :shopname, placeholder: :商品名, class: :form__title
   = form.text_field :address, placeholder: :住所, class: :form__title
   = form.text_field :expirydate, placeholder: :有効期限, class: :form__title
   = form.submit '投稿する', class: :form__btn
