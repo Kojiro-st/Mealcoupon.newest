@@ -1,3 +1,5 @@
+
+
 -# - @posts.each do |post|
   -# = render partial: "post", locals: { post: post }
 
@@ -12,5 +14,26 @@
     - else
       = link_to "ログイン", new_user_session_path, class: "header__right--btn"
       = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
+
+-# .chat-group-form__field--left
+-#   %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
+-# .chat-group-form__field--right
+-#   .chat-group-form__search.clearfix
+-#     %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+-#   #user-search-result
+
+-# .chat-group-form__field.clearfix
+-#   .chat-group-form__field--left
+-#     %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+-#   .chat-group-form__field--right
+-#     #chat-group-users.js-add-user
+
+-# ここからしたが本内容
+.shopname-form__field--left
+  %label.shopname__label{:for => "店を検索"} 店を検索
+.shopname-form__field--right
+  .shopname-form__search.clearfix
+    %input#post-search-field.shopname-form__input{:placeholder => "店名を入力してください", :type => "text"}/
+  #post-search-result
 
 = render @posts

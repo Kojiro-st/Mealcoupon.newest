@@ -2,6 +2,10 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.includes(:user)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
