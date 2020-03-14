@@ -131,52 +131,52 @@ body{
         }
       }
     }
-    .postName{
-      text-align: center;
-      font-size: 40px;
-      font-weight: bold;
-    }
-    .postCoupon{
-      font-size: 30px;
-      color: #FF0000;
-      text-align: center;
-      font-weight: bold;
-    }
-    .postAuthor{
-      font-size: 15px;
-      color: #999;
-      text-align: center;
-    }
-    .postManage{
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-      padding-bottom: 30px;
-      &__edit{
-        display: block;
-        border-radius: 5px;
-        color: #ffffff;
-        background-color:#55c500;
-        padding: 0 10px;
-        text-decoration: none;
-        margin-right: 10px;
-      }
-      &__delete{
-        display: block;
-        border-radius: 5px;
-        color: #ffffff;
-        background-color:#55c500;
-        padding: 0 10px;
-        text-decoration: none;
-        margin-left: 10px;
-      }
-    }
-    .postDate{
-      font-size: 20px;
-    }
-    .postAddress{
-      font-size: 20px;
-    }
+    // .postName{
+    //   text-align: center;
+    //   font-size: 40px;
+    //   font-weight: bold;
+    // }
+    // .postCoupon{
+    //   font-size: 30px;
+    //   color: #FF0000;
+    //   text-align: center;
+    //   font-weight: bold;
+    // }
+    // .postAuthor{
+    //   font-size: 15px;
+    //   color: #999;
+    //   text-align: center;
+    // }
+    // .postManage{
+    //   display: flex;
+    //   justify-content: center;
+    //   margin-top: 10px;
+    //   padding-bottom: 30px;
+      // &__edit{
+      //   display: block;
+      //   border-radius: 5px;
+      //   color: #ffffff;
+      //   background-color:#55c500;
+      //   padding: 0 10px;
+      //   text-decoration: none;
+      //   margin-right: 10px;
+      // }
+      // &__delete{
+      //   display: block;
+      //   border-radius: 5px;
+      //   color: #ffffff;
+      //   background-color:#55c500;
+      //   padding: 0 10px;
+      //   text-decoration: none;
+      //   margin-left: 10px;
+      // }
+    // }
+    // .postDate{
+    //   font-size: 20px;
+    // }
+    // .postAddress{
+    //   font-size: 20px;
+    // }
   }
   .form{
     width: 85%;
@@ -200,6 +200,7 @@ body{
       margin: 15px auto 0;
       background-color: #FF1644;
       color: white;
+      margin-bottom: 50px;
     }
   }
   .user{
@@ -227,4 +228,63 @@ body{
 .content__sentence{
   font-size: 20px;
   padding-top: 30px;
+}
+
+.postTitle{
+  text-align: center;
+  font-size: 25px;
+  padding: 30px 0px;
+  font-weight: bold;
+}
+
+.postName{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  padding-top: 30px;
+}
+.postCoupon{
+  font-size: 30px;
+  color: #FF0000;
+  text-align: center;
+  font-weight: bold;
+}
+.postAuthor{
+  font-size: 15px;
+  color: #999;
+  text-align: center;
+}
+.postManage{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  padding-bottom: 30px;
+  &__edit{
+    display: block;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color:#55c500;
+    padding: 0 10px;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+  &__delete{
+    display: block;
+    border-radius: 5px;
+    color: #ffffff;
+    background-color:#55c500;
+    padding: 0 10px;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+}
+
+.postDate{
+  font-size: 20px;
+  text-align: center;
+}
+.postAddress{
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 30px;
 }

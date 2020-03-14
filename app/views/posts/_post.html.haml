@@ -1,16 +1,18 @@
-.content
-  .content__left
-    .content__left--image
-      = image_tag post.image.url, class: 'image2'
-    .content__left--coupon
-      = post.couponcode
-  .content__right
-    .content__right__name
-      = link_to post.shopname, post_path(post.id)
-    .content__right__address
-      = post.address
-    .content__right__date
-      = post.expirydate
+
+.contents
+  .content
+    .content__left
+      .content__left--image
+        = image_tag post.image.url, class: 'image2'
+      .content__left--coupon
+        = post.couponcode
+    .content__right
+      .content__right__name
+        = link_to post.shopname, post_path(post.id)
+      .content__right__address
+        = post.address
+      .content__right__date
+        = post.expirydate
 
 -# .content
 -#   .content__left
