@@ -1,11 +1,27 @@
-.postTitle
-  = @post.image
-.postDate
-  = @post.created_at
+.header
+  .header__title
+    = link_to "Mealcoupon", root_path, class: "header__title--text"
+  .header__right
+    - if user_signed_in?
+      = link_to current_user.name, user_path(current_user), class: "header__right--btn"
+      = link_to "新規投稿", new_post_path, class: "header__right--btn"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+    - else
+      = link_to "ログイン", new_user_session_path, class: "header__right--btn"
+      = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
+
+.postName
+  = @post.shopname
+.postCoupon
+  = @post.couponcode
 .postAuthor
 - if user_signed_in? && current_user.id == @post.user_id
   .postManage
     = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
     = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
-.postText
-  = simple_format @post.text
+.postTitle
+  = image_tag @post.image.url
+.postDate
+  = @post.expirydate
+.postAddress
+  = @post.address

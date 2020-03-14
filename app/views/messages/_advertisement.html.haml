@@ -1,0 +1,120 @@
+.header
+  .header_left
+    Mealcoupon
+  .header_right
+    .header_right__shop
+      =link_to new_user_registration_path, class: "btn" do
+        shop
+    .header_right__customer
+      = link_to posts_path, class: "btn" do
+        customer
+
+.uppercontent
+  .uppercontent__top-content
+    .uppercontent__top-content_left
+      .uppercontent__top-content_left__big
+        Welcome to Mealcoupon
+      .uppercontent__top-content_left__small
+        Mealcoupon is a world-first platform that helps restaurants fill empty tables during low demand periods.
+        %br
+        Join over 1,400 Australian restaurants using Mealcoupon to increase patronage, atmosphere, and profitability.
+
+.lowercontent
+  .lowercontent__top-content
+    .lowercontent__top-content__up
+      Why Mealcoupon
+    .lowercontent__top-content__down
+      .lowercontent__top-content__down__a
+        %span.image
+          = image_tag src="muscle.jpg", size: "300x200"
+        .lowercontent__top-content__down__a__down
+          Join 1400+ Australian restaurants
+      .lowercontent__top-content__down__a
+        %span.image
+          = image_tag src="toriniku.jpg", size: "300x200"
+        .lowercontent__top-content__down__a__down
+          Access over 1 million diners
+      .lowercontent__top-content__down__a
+        %span.image
+          = image_tag src="sushi.jpg", size: "300x200"
+        .lowercontent__top-content__down__a__down
+          Drive traffic at the times you choose
+  .lowercontent__middle-content
+    .lowercontent__middle-content__all
+      .lowercontent__middle-content__all__a
+        .lowercontent__middle-content__all__a__top
+          About Eatcoupon
+          .lowercontent__middle-content__all__a__top__youtube-container
+          %iframe(width="650px" height="350" src="https://www.youtube.com/embed/KftpUbScl6M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+      .lowercontent__middle-content__all__a
+        .lowercontent__middle-content__all__a__top
+          How it works
+          .lowercontent__middle-content__all__a__top__youtube-container
+          %iframe(width="650" height="350" src="https://www.youtube.com/embed/bek1y2uiQGA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen)
+  .lowercontent__down-content
+    .lowercontent__down-content__top
+      Download the app and sign up your restaurant in 3 minutes
+    .lowercontent__down-content__down
+      .lowercontent__down-content__down__file
+        .lowercontent__down-content__down__file__ball
+          .lowercontent__down-content__down__file__ball__point.rounded-circle
+            1
+        .lowercontent__down-content__down__file__ball__number
+          .lowercontent__down-content__down__file__ball__number__sentence1
+            Tell us about you
+          .lowercontent__down-content__down__file__ball__number__sentence2
+            30 seconds
+      .lowercontent__down-content__down__file
+        .lowercontent__down-content__down__file__ball
+          .lowercontent__down-content__down__file__ball__point.rounded-circle
+            2
+        .lowercontent__down-content__down__file__ball__number
+          .lowercontent__down-content__down__file__ball__number__sentence1
+            Tell us about your restaurant
+          .lowercontent__down-content__down__file__ball__number__sentence2
+            1 minute
+      .lowercontent__down-content__down__file
+        .lowercontent__down-content__down__file__ball
+          .lowercontent__down-content__down__file__ball__point.rounded-circle
+            3
+        .lowercontent__down-content__down__file__ball__number
+          .lowercontent__down-content__down__file__ball__number__sentence1
+            Set up your opening hours
+          .lowercontent__down-content__down__file__ball__number__sentence2
+            1 minute
+
+-# .lowestcontent
+-#   .lowestcontent__up
+-#     .lowestcontent__up__top
+-#       Some of our restaurant partners
+-#     .lowestcontent__up__down
+-#   .lowestcontent__down
+-#     .lowestcontent__down__all
+-#       .lowestcontent__down__all__sentence
+-#         EatClub helps us drive traffic
+-#         %br
+-#         at times we choose, we have
+-#         %br
+-#         seen a 90% boost in revenue
+-#         %br
+-#         during slow periods
+-#       .lowestcontent__down__all__editer
+-#         .lowestcontent__down__all__editer__name
+-#           Naomi Scott
+-#         .lowestcontent__down__all__editer__location
+-#           NY, USA
+
+
+.footer
+  .footer__head
+    Use this app!!!
+  .footer__body
+    .footer__body__left
+      Mealcoupon
+    .footer__body__right
+      .footer__body__right__icon1
+        = icon('fab','facebook')
+      .footer__body__right__icon2
+        = icon('fab','instagram')
+      .footer__body__right__icon3
+        © 2020 Mealcoupon
