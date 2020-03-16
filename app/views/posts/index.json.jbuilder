@@ -1,11 +1,11 @@
-json.array! @posts do |post|
-  json.id post.id
-  json.shopname post.shopname
-end
+# json.array! @posts do |post|
+#   json.id post.id
+#   json.shopname post.shopname
+# end
 
 json.array! @posts do |post|
   json.id post.id
-  json.image post.image
+  json.image post.image.url
   json.couponcode post.couponcode
   json.shopname post.shopname
   json.address post.address

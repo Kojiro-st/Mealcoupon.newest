@@ -1,11 +1,7 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.includes(:user)
-    respond_to do |format|
-      format.html
-      format.json
-    end
+    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(3)
   end
 
   def new

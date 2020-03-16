@@ -1,0 +1,17 @@
+.signin{
+  text-align: center;
+  padding: 100px 200px;
+  &__all{
+    display: flex;
+    justify-content: space-around;
+    &__left{
+      font-size: 50px;
+      font-weight: bold;
+      padding-right: 80px;
+    }
+    &__right{
+      padding-left: 80px;
+      font-size: 20px;
+    }
+  }
+}

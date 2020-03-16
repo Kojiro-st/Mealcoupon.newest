@@ -2,12 +2,8 @@
   .header_left
     Mealcoupon
   .header_right
-    .header_right__shop
-      =link_to new_user_registration_path, class: "btn" do
-        shop
-    .header_right__customer
-      = link_to posts_path, class: "btn" do
-        customer
+    = link_to posts_path, class: "btn" do
+      use coupons
 
 .uppercontent
   .uppercontent__top-content
@@ -26,17 +22,17 @@
     .lowercontent__top-content__down
       .lowercontent__top-content__down__a
         %span.image
-          = image_tag src="muscle.jpg", size: "300x200"
+          = image_tag src="muscle.jpg", class: "img"
         .lowercontent__top-content__down__a__down
           Join 1400+ Australian restaurants
       .lowercontent__top-content__down__a
         %span.image
-          = image_tag src="toriniku.jpg", size: "300x200"
+          = image_tag src="toriniku.jpg", class: "img"
         .lowercontent__top-content__down__a__down
           Access over 1 million diners
       .lowercontent__top-content__down__a
         %span.image
-          = image_tag src="sushi.jpg", size: "300x200"
+          = image_tag src="sushi.jpg", class: "img"
         .lowercontent__top-content__down__a__down
           Drive traffic at the times you choose
   .lowercontent__middle-content
