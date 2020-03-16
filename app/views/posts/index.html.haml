@@ -29,12 +29,13 @@
 -#     #chat-group-users.js-add-user
 
 -# ここからしたが本内容
-.shopname-form__field--left
-  %label.shopname__label{:for => "店を検索"} 店を検索
-.shopname-form__field--right
-  .shopname-form__search.clearfix
-    %input#post-search-field.shopname-form__input{:placeholder => "店名を入力してください", :type => "text"}/
-  #post-search-result
+.shopname-form
+  .shopname-form__field--left
+    %label.shopname__label{:for => "店を検索"} 店を検索
+  .shopname-form__field--right
+    .shopname-form__search.clearfix
+      %input#post-search-field.shopname-form__input{:placeholder => "店名を入力してください", :type => "text"}/
+    #post-search-result
 
 = render @posts
 = paginate(@posts)
