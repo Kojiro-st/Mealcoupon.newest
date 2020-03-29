@@ -1,7 +1,13 @@
 class PostsController < ApplicationController
 
   def index
-    @posts = Post.includes(:user)
+    @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(3)
+    return nil if params[:keyword] == ""
+    @posts = Post.where(['shopname LIKE ?', "%#{params[:keyword]}%"] )
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def new
@@ -11,6 +17,10 @@ class PostsController < ApplicationController
   def create
     Post.create(post_params)
     redirect_to root_path
+  end
+
+  def search
+    @posts = Post.search(params[:keyword])
   end
 
   def show

@@ -1,3 +1,5 @@
+
+
 -# - @posts.each do |post|
   -# = render partial: "post", locals: { post: post }
 
@@ -13,4 +15,73 @@
       = link_to "ログイン", new_user_session_path, class: "header__right--btn"
       = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
 
+-# .chat-group-form__field--left
+-#   %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加
+-# .chat-group-form__field--right
+-#   .chat-group-form__search.clearfix
+-#     %input#user-search-field.chat-group-form__input{:placeholder => "追加したいユーザー名を入力してください", :type => "text"}/
+-#   #user-search-result
+
+-# .chat-group-form__field.clearfix
+-#   .chat-group-form__field--left
+-#     %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+-#   .chat-group-form__field--right
+-#     #chat-group-users.js-add-user
+
+-# ここからしたが本内容
+-# .shopname-form
+-#   .shopname-form__field--top
+-#     %label.shopname__label{:for => "店を検索"} 店を検索
+-#   .shopname-form__field--bottom
+-#     .shopname-form__search-left.clearfix
+-#       %input#post-search-field.shopname-form__input{:placeholder => "店名を入力してください", :type => "text"}/
+-#     .shopname-form__search-right
+-#       = form_with model: @post, class: :addname__action, local: true do |form|
+-#         = form.submit '検索', class: :addname__action
+-#     #post-search-result
+
+.shopname-form
+  .shopname-form__field--top
+    店を検索
+  .shopname-form__field--bottom
+    = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+      = form.submit "検索", class: "search-btn"
+
+    -# #addname-posts.js-add-post
+    -#   .addname-post.clearfix.js-post-number#addname-post-8
+    -#     %input{type: "hidden"}
+        -# %p.addname-post__name= current_user.shopname
+
+    - @posts.each do |post|
+      -# - if current_user.id != user.id
+      -#   .addname-post.clearfix.js-addname-post
+      -#     %input{type: "hidden"}
+      -#     %p.addname-post__name
+      -#       = user.shopname 
+
+-# .chat-group-form__field.clearfix
+-#   .chat-group-form__field--left
+-#     %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
+-#   .chat-group-form__field--right
+
+-#     #chat-group-users.js-add-user
+-#       .chat-group-user.clearfix.js-chat-member#chat-group-user-8
+-#         %input{name: "group[user_ids][]", type: "hidden", value: current_user.id}
+-#         %p.chat-group-user__name= current_user.name
+
+-#     - group.users.each do |user|
+-#       - if current_user.name != user.name
+-#         .chat-group-user.clearfix.js-chat-member
+-#           %input{name: "group[user_ids][]", type: "hidden", value: user.id}
+-#           %p.chat-group-user__name
+-#             = user.name 
+-#           %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+-#             削除
+-# .chat-group-form__field.clearfix
+-#   .chat-group-form__field--left
+-#   .chat-group-form__field--right
+-#     = f.submit class: 'chat-group-form__action-btn'
+
 = render @posts
+-# = paginate(@posts)
