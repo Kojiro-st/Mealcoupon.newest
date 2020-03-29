@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts do
     collection do
       get 'search'
+      get 'map'
     end
   end
   resources :users, only: :show

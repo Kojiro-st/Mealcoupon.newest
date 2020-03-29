@@ -23,6 +23,9 @@ class PostsController < ApplicationController
     @posts = Post.search(params[:keyword])
   end
 
+  def map
+  end
+
   def show
     @post = Post.find(params[:id])
   end
