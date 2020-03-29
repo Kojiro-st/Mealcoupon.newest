@@ -11,9 +11,11 @@
       = link_to current_user.name, user_path(current_user), class: "header__right--btn"
       = link_to "新規投稿", new_post_path, class: "header__right--btn"
       = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+      = link_to "地図", map_posts_path, class: "header__right--btn"
     - else
       = link_to "ログイン", new_user_session_path, class: "header__right--btn"
       = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
+      = link_to "地図", map_posts_path, class: "header__right--btn"
 
 -# .chat-group-form__field--left
 -#   %label.chat-group-form__label{:for => "chat_group_チャットメンバーを追加"} チャットメンバーを追加

@@ -8,8 +8,20 @@
     :css
       html { height: 100% }
       body { height: 100% }
-      #map { height: 100%; width: 100%}
   %body
+    .header
+      .header__title
+        = link_to "Mealcoupon", root_path, class: "header__title--text"
+      .header__right
+        - if user_signed_in?
+          = link_to current_user.name, user_path(current_user), class: "header__right--btn"
+          = link_to "新規投稿", new_post_path, class: "header__right--btn"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+          = link_to "use coupon", posts_path, class: "header__right--btn"
+        - else
+          = link_to "ログイン", new_user_session_path, class: "header__right--btn"
+          = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
+          = link_to "use coupon", posts_path, class: "header__right--btn"
     #map
     :javascript
       var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
@@ -19,34 +31,3 @@
        mapTypeId: 'roadmap'   //地図の種類
       };
       var map = new google.maps.Map(document.getElementById('map'), Options);
-
--# !!!
--# %html
--#   %head
--#     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
--#     %title Simple Map
--#     %meta{:content => "initial-scale=1.0", :name => "viewport"}/
--#     %meta{:charset => "utf-8"}/
--#     :css
--#       /* Always set the map height explicitly to define the size of the div
--#        * element that contains the map. */
--#       #map {
--#         height: 100%;
--#       }
--#       /* Optional: Makes the sample page fill the window. */
--#       html, body {
--#         height: 100%;
--#         margin: 0;
--#         padding: 0;
--#       }
--#   %body
--#     #map
--#     :javascript
--#       var map;
--#       function initMap() {
--#         map = new google.maps.Map(document.getElementById('map'), {
--#           center: {lat: -34.397, lng: 150.644},
--#           zoom: 8
--#         });
--#       }
--#     %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyBGr4wHYWawwv5Uu9KrLaeimSszx04thqU&callback=initMap"}
