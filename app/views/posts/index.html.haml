@@ -29,22 +29,28 @@
 -#     #chat-group-users.js-add-user
 
 -# ここからしたが本内容
+-# .shopname-form
+-#   .shopname-form__field--top
+-#     %label.shopname__label{:for => "店を検索"} 店を検索
+-#   .shopname-form__field--bottom
+-#     .shopname-form__search-left.clearfix
+-#       %input#post-search-field.shopname-form__input{:placeholder => "店名を入力してください", :type => "text"}/
+-#     .shopname-form__search-right
+-#       = form_with model: @post, class: :addname__action, local: true do |form|
+-#         = form.submit '検索', class: :addname__action
+-#     #post-search-result
+
 .shopname-form
   .shopname-form__field--top
-    %label.shopname__label{:for => "店を検索"} 店を検索
+    店を検索
   .shopname-form__field--bottom
-    .shopname-form__search-left.clearfix
-      %input#post-search-field.shopname-form__input{:placeholder => "店名を入力してください", :type => "text"}/
-    .shopname-form__search-right
-      = form_with model: @post, class: :addname__action, local: true do |form|
-        = form.submit '検索', class: :addname__action
-    #post-search-result
+    = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
+      = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
+      = form.submit "検索", class: "search-btn"
 
-
-
-    #addname-posts.js-add-post
-      .addname-post.clearfix.js-post-number#addname-post-8
-        %input{type: "hidden"}
+    -# #addname-posts.js-add-post
+    -#   .addname-post.clearfix.js-post-number#addname-post-8
+    -#     %input{type: "hidden"}
         -# %p.addname-post__name= current_user.shopname
 
     - @posts.each do |post|
