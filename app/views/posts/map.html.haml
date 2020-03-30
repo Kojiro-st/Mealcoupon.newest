@@ -11,7 +11,7 @@
   %body
     .header
       .header__title
-        = link_to "Mealcoupon", root_path, class: "header__title--text"
+        = link_to "Mealcoupon", posts_path, class: "header__title--text"
       .header__right
         - if user_signed_in?
           = link_to current_user.name, user_path(current_user), class: "header__right--btn"
