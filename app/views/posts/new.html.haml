@@ -41,3 +41,18 @@
 
   = form_with model: @post, class: :form, local: true do |form|
     = form.submit '投稿する', class: :form__btn
+
+
+.contents
+  .content__title
+    New coupon
+  .content__image
+    表示したいファイルを選択してください
+  
+= form_for(@post, url: posts_path) do |f|
+  = f.text_field :image, class: 'form__title'
+
+  .content__sentence
+    = f.label :クーポンコードを記入してください
+    = f.text_field :couponcode, class: 'form__text'
+    = f.submit "次へ", class: "field__next__submit"
