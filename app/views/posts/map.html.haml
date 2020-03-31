@@ -4,12 +4,24 @@
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
     %meta{:charset => "UTF-8"}/
     %script{:src => "./js/input.js?date=yyyymmddhhss"}
-    %script{:src => "http://maps.google.com/maps/api/js?key={AIzaSyBPZzx94o4MP7A_MBCBxKVsiS97YUoo3v4}&language=ja"}
+    %script{:src => "http://maps.google.com/maps/api/js?key=AIzaSyBGr4wHYWawwv5Uu9KrLaeimSszx04thqU&language=ja"}
     :css
       html { height: 100% }
       body { height: 100% }
-      #map { height: 100%; width: 100%}
   %body
+    .header
+      .header__title
+        = link_to "Mealcoupon", posts_path, class: "header__title--text"
+      .header__right
+        - if user_signed_in?
+          = link_to current_user.name, user_path(current_user), class: "header__right--btn"
+          = link_to "新規投稿", new_post_path, class: "header__right--btn"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+          = link_to "use coupon", posts_path, class: "header__right--btn"
+        - else
+          = link_to "ログイン", new_user_session_path, class: "header__right--btn"
+          = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
+          = link_to "use coupon", posts_path, class: "header__right--btn"
     #map
     :javascript
       var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);

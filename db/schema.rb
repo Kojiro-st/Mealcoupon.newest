@@ -13,11 +13,11 @@
 ActiveRecord::Schema.define(version: 2020_03_12_122043) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "image"
-    t.string "couponcode"
-    t.string "shopname"
-    t.string "address"
-    t.string "expirydate"
+    t.text "image", null: false
+    t.string "couponcode", null: false
+    t.string "shopname", null: false
+    t.string "address", null: false
+    t.string "expirydate", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
