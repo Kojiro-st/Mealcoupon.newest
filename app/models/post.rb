@@ -7,4 +7,8 @@ class Post < ApplicationRecord
     return Post.all unless search
     Post.where('shopname LIKE(?)', "%#{search}%")
   end
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
+
 end
