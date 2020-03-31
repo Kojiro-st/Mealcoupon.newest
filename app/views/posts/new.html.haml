@@ -43,16 +43,34 @@
     = form.submit '投稿する', class: :form__btn
 
 
-.contents
-  .content__title
-    New coupon
-  .content__image
-    表示したいファイルを選択してください
+-# .contents
+-#   .content__title
+-#     New coupon
+-#   .content__image
+-#     表示したいファイルを選択してください
   
-= form_for(@post, url: posts_path) do |f|
-  = f.text_field :image, class: 'form__title'
+-# = form_for(@post, url: posts_path) do |f|
+-#   = f.file_field :image, class: 'form__title'
 
-  .content__sentence
-    = f.label :クーポンコードを記入してください
-    = f.text_field :couponcode, class: 'form__text'
-    = f.submit "次へ", class: "field__next__submit"
+-#   .content__sentence
+-#     = f.label :クーポンコードを記入してください
+-#     = f.text_field :couponcode, class: 'form__text'
+
+-#   .content__sentence
+-#     = f.label :商品名を記入してください
+-#     = f.text_field :couponcode, class: 'form__text'
+
+-#   .content__sentence
+-#     = f.label :住所を記入してください
+-#     = f.text_field :couponcode, class: 'form__text'
+
+-#   .content__sentence
+-#     = f.label :有効期限を記入してください
+-#     = f.text_field :couponcode, class: 'form__text'
+
+-#   .content_bottun
+-#     = f.submit '投稿する', class: :form__btn
+
+
+-# .field__next
+-#                 = f.submit "次へ", class: "field__next__submit"
