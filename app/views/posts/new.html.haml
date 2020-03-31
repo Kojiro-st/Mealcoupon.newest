@@ -22,16 +22,20 @@
         = form.file_field :image, class: :form__title
 
       .field
-        = form.text_field :couponcode, class: :form__text
+        クーポンコードを記入してください
+        = form.text_field :couponcode,class: :form__text
 
       .field
+        商品名を記入してください
         = form.text_field :shopname, class: :form__text
 
       .field
+        住所を記入してください
         = form.text_field :address, class: :form__text
 
       .field
-        = form.text_field :expirydate, class: :form__text
+        有効期限を記入してください
+        = form.text_field :expirydate, placeholder: :？年？月？日？時, class: :form__text
 
       .field
         = form.submit '投稿する', class: :form__btn
