@@ -9,7 +9,6 @@ class PostsController < ApplicationController
   end
 
   def create
-    binding.pry
     Post.create(post_params)
     redirect_to posts_path
   end
@@ -32,13 +31,13 @@ class PostsController < ApplicationController
   def update
     post = Post.find(params[:id])
     post.update(post_params)
-    redirect_to post_path(post.id)
+    redirect_to posts_path
   end
 
   def destroy
     post = Post.find(params[:id])
     post.destroy
-    redirect_to root_path
+    redirect_to posts_path
   end
 
   private

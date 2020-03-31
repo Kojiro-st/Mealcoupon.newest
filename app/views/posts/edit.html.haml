@@ -12,36 +12,33 @@
       = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
       = link_to "use coupon", posts_path, class: "header__right--btn"
 
-= render @posts
 
 .contents
   .content__title
     New coupon
+
   .content__image
     表示したいファイルを選択してください
+  .content__whole
+    = form_with model: @post, class: :form, local: true do |form|
+      .field
+        = form.file_field :image, class: :form__title
 
-  = form_with model: @post, class: :form, local: true do |form|
-    = form.file_field :image, class: :form__title
+      .field
+        クーポンコードを記入してください
+        = form.text_field :couponcode,class: :form__text
 
-  .content__sentence
-    クーポンコードを記入してください
-  = form_with model: @post, class: :form, local: true do |form|
-    = form.text_field :couponcode, placeholder: :？％オフ, class: :form__text
+      .field
+        商品名を記入してください
+        = form.text_field :shopname, class: :form__text
 
-  .content__sentence
-    商品名を記入してください
-  = form_with model: @post, class: :form, local: true do |form|
-    = form.text_field :shopname, placeholder: :商品名, class: :form__text
+      .field
+        住所を記入してください
+        = form.text_field :address, class: :form__text
 
-  .content__sentence
-    住所を記入してください
-  = form_with model: @post, class: :form, local: true do |form|
-    = form.text_field :address, placeholder: :住所, class: :form__text
+      .field
+        有効期限を記入してください
+        = form.text_field :expirydate, placeholder: :？年？月？日？時, class: :form__text
 
-  .content__sentence
-    有効期限を記入してください
-  = form_with model: @post, class: :form, local: true do |form|
-    = form.text_field :expirydate, placeholder: :？年？月？日？時, class: :form__text
-
-  = form_with model: @post, class: :form, local: true do |form|
-    = form.submit '投稿する', class: :form__btn
+      .field
+        = form.submit '投稿する', class: :form__btn
