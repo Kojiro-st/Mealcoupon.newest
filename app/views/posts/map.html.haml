@@ -1,73 +1,69 @@
-!!!
-%html{:lang => "ja"}
-  %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %meta{:charset => "UTF-8"}/
-    %script{:src => "./js/input.js?date=yyyymmddhhss"}
-    %script{:src => "http://maps.google.com/maps/api/js?key=AIzaSyBGr4wHYWawwv5Uu9KrLaeimSszx04thqU&language=ja"}
-    :css
-      html { height: 100% }
-      body { height: 100% }
-  %body
-    .header
-      .header__title
-        = link_to "Mealcoupon", posts_path, class: "header__title--text"
-      .header__right
-        - if user_signed_in?
-          = link_to current_user.name, user_path(current_user), class: "header__right--btn"
-          = link_to "新規投稿", new_post_path, class: "header__right--btn"
-          = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
-          = link_to "use coupon", posts_path, class: "header__right--btn"
-        - else
-          = link_to "ログイン", new_user_session_path, class: "header__right--btn"
-          = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
-          = link_to "use coupon", posts_path, class: "header__right--btn"
-    
-    
-    #map
-    :javascript
-      var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
-      var Options = {
-       zoom: 15,      //地図の縮尺値
-       center: MyLatLng,    //地図の中心座標
-       mapTypeId: 'roadmap'   //地図の種類
-      };
-      var map = new google.maps.Map(document.getElementById('map'), Options);
+.header
+  .header__title
+    = link_to "Mealcoupon", posts_path, class: "header__title--text"
+  .header__right
+    - if user_signed_in?
+      = link_to current_user.name, user_path(current_user), class: "header__right--btn"
+      = link_to "新規投稿", new_post_path, class: "header__right--btn"
+      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
+      = link_to "use coupon", posts_path, class: "header__right--btn"
+    - else
+      = link_to "ログイン", new_user_session_path, class: "header__right--btn"
+      = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
+      = link_to "use coupon", posts_path, class: "header__right--btn"
 
--# %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyBGr4wHYWawwv5Uu9KrLaeimSszx04thqU"}
-
--# %p
--#   %button{:onclick => "getMyPlace()"} 現在位置を取得
--# #result
--# #map{:style => "width:100%;height:300px;"}
-
--# :javascript
--#   function getMyPlace() {
--#     var output = document.getElementById("result");
--#     if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
--#       output.innerHTML = "<p>Geolocationはあなたのブラウザーでサポートされておりません</p>";
--#       return;
--#     }
--#     function success(position) {
--#       var latitude  = position.coords.latitude;//緯度
--#       var longitude = position.coords.longitude;//経度
--#       output.innerHTML = '<p>緯度 ' + latitude + '° <br>経度 ' + longitude + '°</p>';
--#       // 位置情報
--#       var latlng = new google.maps.LatLng( latitude , longitude ) ;
--#       // Google Mapsに書き出し
--#       var map = new google.maps.Map( document.getElementById( 'map' ) , {
--#           zoom: 15 ,// ズーム値
--#           center: latlng ,// 中心座標
--#       } ) ;
--#       // マーカーの新規出力
--#       new google.maps.Marker( {
--#           map: map ,
--#           position: latlng ,
--#       } ) ;
--#     };
--#     function error() {
--#       //エラーの場合
--#       output.innerHTML = "座標位置を取得できません";
--#     };
--#     navigator.geolocation.getCurrentPosition(success, error);//成功と失敗を判断
--#   }
+.maps
+  .maps__body
+    .maps__body__top
+      %h2 住所を入力してください
+      / 地名入力用のinputを追加
+      %input#address{:type => "textbox"}/
+      / buttonをクリックしたらcodeAddressを実行　
+      %input{:onclick => "codeAddress()", :type => "button", :value => "検索"}/
+    .maps__body__down
+      #map
+      :css
+        #map{
+          height: 70vh;
+          width: calc(100vw - 100px);
+        }
+      :javascript
+        /*
+        mapを関数の外で定義(codeAddressでも使うため)
+        geocoderを用意
+        */
+        
+        let map
+        let geocoder
+        
+        function initMap(){
+          // geocoderを初期化
+          geocoder = new google.maps.Geocoder()
+        
+          map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 35.681236, lng: 139.767125},
+          zoom: 8
+          });
+        }
+        
+        function codeAddress(){
+          // 入力を取得
+          let inputAddress = document.getElementById('address').value;
+        
+          // geocodingしたあとmapを移動
+          geocoder.geocode( { 'address': inputAddress}, function(results, status) {
+            if (status == 'OK') {
+                            // map.setCenterで地図が移動
+              map.setCenter(results[0].geometry.location);
+        
+                            // google.maps.MarkerでGoogleMap上の指定位置にマーカが立つ
+              var marker = new google.maps.Marker({
+                  map: map,
+                  position: results[0].geometry.location
+              });
+            } else {
+              alert('入力内容が正しくありません' + status);
+            }
+          });
+        }
+      %script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyBGr4wHYWawwv5Uu9KrLaeimSszx04thqU&callback=initMap"}

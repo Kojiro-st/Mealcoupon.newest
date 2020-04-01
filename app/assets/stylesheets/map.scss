@@ -1,4 +1,14 @@
-#map{
-  height: 100%;
-  width: 100%;
+.maps{
+  margin-top: 110px;
+  align-items: center;
+  &__body{
+    margin: 0 auto;
+    &__top{
+      margin-bottom: 40px;
+      padding-left: 50px;
+    }
+    &__down{
+      padding-left: 50px;
+    }
+  }
 }
