@@ -22,6 +22,8 @@
           = link_to "ログイン", new_user_session_path, class: "header__right--btn"
           = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
           = link_to "use coupon", posts_path, class: "header__right--btn"
+    
+    
     #map
     :javascript
       var MyLatLng = new google.maps.LatLng(35.6811673, 139.7670516);
@@ -31,3 +33,41 @@
        mapTypeId: 'roadmap'   //地図の種類
       };
       var map = new google.maps.Map(document.getElementById('map'), Options);
+
+-# %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyBGr4wHYWawwv5Uu9KrLaeimSszx04thqU"}
+
+-# %p
+-#   %button{:onclick => "getMyPlace()"} 現在位置を取得
+-# #result
+-# #map{:style => "width:100%;height:300px;"}
+
+-# :javascript
+-#   function getMyPlace() {
+-#     var output = document.getElementById("result");
+-#     if (!navigator.geolocation){//Geolocation apiがサポートされていない場合
+-#       output.innerHTML = "<p>Geolocationはあなたのブラウザーでサポートされておりません</p>";
+-#       return;
+-#     }
+-#     function success(position) {
+-#       var latitude  = position.coords.latitude;//緯度
+-#       var longitude = position.coords.longitude;//経度
+-#       output.innerHTML = '<p>緯度 ' + latitude + '° <br>経度 ' + longitude + '°</p>';
+-#       // 位置情報
+-#       var latlng = new google.maps.LatLng( latitude , longitude ) ;
+-#       // Google Mapsに書き出し
+-#       var map = new google.maps.Map( document.getElementById( 'map' ) , {
+-#           zoom: 15 ,// ズーム値
+-#           center: latlng ,// 中心座標
+-#       } ) ;
+-#       // マーカーの新規出力
+-#       new google.maps.Marker( {
+-#           map: map ,
+-#           position: latlng ,
+-#       } ) ;
+-#     };
+-#     function error() {
+-#       //エラーの場合
+-#       output.innerHTML = "座標位置を取得できません";
+-#     };
+-#     navigator.geolocation.getCurrentPosition(success, error);//成功と失敗を判断
+-#   }
