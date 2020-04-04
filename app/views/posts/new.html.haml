@@ -30,7 +30,7 @@
         = form.text_field :shopname, class: :form__text
 
       .field
-        住所を記入してください 
+        住所を記入してください
         = form.text_field :address, class: :form__text
 
       .field
@@ -38,21 +38,12 @@
         = form.text_field :expirydate, placeholder: :？年？月？日？時, class: :form__text
 
       .field
-        %select#prefecture{name: "exp_month", type: "text",class:"select"}
+        %select#prefecture{name: "prefecture", type: "text",class:"prefecture"}
           %option{value: ""} --
-          %option{value: "1"}01
-          %option{value: "2"}02
-          %option{value: "3"}03
-          %option{value: "4"}04
-          %option{value: "5"}05
-          %option{value: "6"}06
-          %option{value: "7"}07
-          %option{value: "8"}08
-          %option{value: "9"}09
-          %option{value: "10"}10
-          %option{value: "11"}11
-          %option{value: "12"}12
         %span 都道府県
+        %select#foodvariety{name: "foodvariety", type: "text",class:"foodvariety"}
+          %option{value: ""} --
+        %span ご飯の種類
 
       .field
         = form.submit '投稿する', class: :form__btn
