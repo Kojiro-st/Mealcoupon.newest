@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_04_04_004323) do
     t.string "shopname", null: false
     t.string "address", null: false
     t.string "expirydate", null: false
+    t.text "tag"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
