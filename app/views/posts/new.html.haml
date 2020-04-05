@@ -38,12 +38,16 @@
         = form.text_field :expirydate, placeholder: :？年？月？日？時, class: :form__text
 
       .field
-        %select#prefecture{name: "prefecture", type: "text",class:"prefecture"}
-          %option{value: ""} --
-        %span 都道府県
-        %select#foodvariety{name: "foodvariety", type: "text",class:"foodvariety"}
-          %option{value: ""} --
-        %span ご飯の種類
+        = form.collection_select :place, Prefecture.all, :id, :name
+
+      .field
+        = 
+        -# %select#prefecture{name: "prefecture", type: "text",class:"prefecture"}
+        -#   %option{value: ""} --
+        -# %span 都道府県
+        -# %select#foodvariety{name: "foodvariety", type: "text",class:"foodvariety"}
+        -#   %option{value: ""} --
+        -# %span ご飯の種類
 
       .field
         = form.submit '投稿する', class: :form__btn
