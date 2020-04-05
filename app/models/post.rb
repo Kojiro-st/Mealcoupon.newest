@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   validates :image, :couponcode, :shopname, :address, :expirydate, presence: true
   belongs_to :user
+  acts_as_taggable
 
   mount_uploader :image, ImageUploader
   def self.search(search)
