@@ -1,50 +1,70 @@
 
+-# .contents
+-#   .content
+-#     .content__left
+-#       .content__left--image
+-#         = image_tag post.image.url, class: 'image2'
+-#       .content__left--coupon
+-#         = post.couponcode
+-#     .content__right
+-#       .content__right__name
+-#         = link_to post.shopname, post_path(post.id)
+-#       .content__right__address
+-#         = post.address
+-#       .content__right__date
+-#         有効期限：
+-#         = post.expirydate
+
 .contents
   .content
-    .content__left
-      .content__left--image
-        = image_tag post.image.url, class: 'image2'
-      .content__left--coupon
-        = post.couponcode
-    .content__right
-      .content__right__name
-        = link_to post.shopname, post_path(post.id)
-      .content__right__address
-        = post.address
-      .content__right__date
-        = post.expirydate
+    = link_to post_path(post.id), class: 'content' do
+      .content__top
+        .content__top--image
+          = image_tag post.image.url, class: 'image2'
+        .content__top--name
+          = post.shopname
+      .content__bottom
+        .content__bottom
+          .content__bottom__coupon
+            = post.couponcode
+          .content__bottom__address
+            住所：
+            = post.address
+          .content__bottom__date
+            有効期限：
+            = post.expirydate
+  .content
+    = link_to post_path(post.id) do
+      .content__top
+        .content__top--image
+          = image_tag post.image.url, class: 'image2', height: "200px", width: "334px"
+        .content__top--name
+          = post.shopname
+      .content__bottom
+        .content__bottom
+          .content__bottom__coupon
+            = post.couponcode
+          .content__bottom__address
+            住所：
+            = post.address
+          .content__bottom__date
+            有効期限：
+            = post.expirydate
+  .content
+    = link_to post_path(post.id) do
+      .content__top
+        .content__top--image
+          = image_tag post.image.url, class: 'image2', height: "200px", width: "334px"
+        .content__top--name
+          = post.shopname
+      .content__bottom
+        .content__bottom
+          .content__bottom__coupon
+            = post.couponcode
+          .content__bottom__address
+            住所：
+            = post.address
+          .content__bottom__date
+            有効期限：
+            = post.expirydate
 
-
--# .content
--#   .content__left
--#     .content__left--image
--#       -# %img(src="post.image.url" class="image2" alt="")/
--#       = image_tag post.image.url, class: 'image2'
--#     .content__left--coupon
--#       = post.couponcode
--#   .content__right
--#     .content__right__name
--#       = post.shopname
--#     .content__right__address
--#       = post.address
--#       -# = link_to post.user.name, user_path(post.user), class: "content__right__bottom--userName--btn"(住所挿入)
--#     .content__right__date
--#       = post.expirydate
-      -# = post.created_at(有効期限挿入)
-
--# .content
--#   .content__left
--#     .content__left--image
-      -# %img(src="post.image.url" class="image2" alt="")/
-  -#     = image_tag post.image.url, class: 'image2'
-  -#   .content__left--coupon
-  -#     = post.couponcode
-  -# .content__right
-  -#   .content__right__name
-  -#     = post.shopname
-  -#   .content__right__address
-  -#     = post.address
-      -# = link_to post.user.name, user_path(post.user), class: "content__right__bottom--userName--btn"(住所挿入)
-    -# .content__right__date
-    -#   = post.expirydate
-      -# = post.created_at(有効期限挿入)
