@@ -35,16 +35,16 @@ body{
   }
 
 .shopname-form{
-  text-align: center;
-  width: 60%;
-  margin: 100px auto;
+  margin: 130px auto;
+  width: 430px;
   &__field--top{
+    text-align: center;
     font-size: 20px;
-    padding-bottom: 15px;
     float: left;
     padding-right: 20px;
   }
   &__field--bottom{
+    text-align: center;
     display: flex;
     margin-left: auto;
     margin-right: auto;
@@ -52,19 +52,16 @@ body{
 }
   .contents{
     width: 90%;
-    height: 100%;
-    overflow: scroll;
-    margin: 80px auto;
+    margin: 50px auto;
     display: flex;
     justify-content: space-between;
     .content{
-      height: 380px;
-      width: 30%;
+      width: 25%;
       background-color: white;
       border-radius: 5px;
       &__top{
         &--name{
-          font-size: 18px;
+          font-size: 25px;
           font-weight: bold;
           padding-top: 10px;
         }
@@ -161,6 +158,10 @@ body{
 
 .shopname-form{
   margin-top: 100px;
+}
+
+.search-form{
+  width: 250px;
 }
 
 .image2{
