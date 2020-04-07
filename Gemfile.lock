@@ -274,14 +274,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
   active_hash
->>>>>>> 2d86c28ac3cc946b35b3f343009903fcdd30457d
-=======
-  active_hash
->>>>>>> 2d86c28ac3cc946b35b3f343009903fcdd30457d
   acts-as-taggable-on (~> 6.0)
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.1.1)
