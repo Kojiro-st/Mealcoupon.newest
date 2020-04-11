@@ -1,4 +1,5 @@
 class Post < ApplicationRecord
+  acts_as_taggable
   validates :image, :couponcode, :shopname, :address, :expirydate, presence: true
   belongs_to :user
 
