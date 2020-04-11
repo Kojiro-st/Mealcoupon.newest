@@ -68,7 +68,7 @@ gem 'haml-rails'
 gem "font-awesome-sass"
 gem 'pry-rails'
 gem 'bootstrap', '~> 4.1.1'
-gem 'acts-as-taggable-on'
+gem 'acts-as-taggable-on', '~> 3.4'
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
