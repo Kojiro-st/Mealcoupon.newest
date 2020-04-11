@@ -24,13 +24,6 @@ class PostsController < ApplicationController
   def map
   end
 
-  def find
-    latitude = params[:latitude]
-    longitude = params[:longitude]
-
-    @places = Post.all.within(2, origin: [latitude, longitude])
-  end
-
   def edit
     @post = Post.find(params[:id])
   end
