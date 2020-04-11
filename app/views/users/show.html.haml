@@ -17,5 +17,23 @@
 .postTitle
   = @user.name
   さんの投稿一覧
-- @posts.each do |post|
-  = render partial: "posts/post", locals: { post: post }
+.posts
+  .contents
+    - @posts.each do |post|
+      .content
+        = link_to post_path(post.id) do
+          .content__top
+            .content__top--image
+              = image_tag post.image.url, class: 'image2'
+            .content__top--name
+              = post.shopname
+          .content__bottom
+            .content__bottom
+              .content__bottom__coupon
+                = post.couponcode
+              .content__bottom__address
+                住所：
+                = post.address
+              .content__bottom__date
+                有効期限：
+                = post.expirydate
