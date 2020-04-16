@@ -29,14 +29,14 @@
             .content__top--image
               = image_tag post.image.url, class: 'image2'
             .content__top--name
-              = post.shopname
+              = post.foodname
           .content__bottom
             .content__bottom
               .content__bottom__coupon
                 = post.couponcode
               .content__bottom__address
-                住所：
-                = post.address
+                店名：
+                = post.shopname
               .content__bottom__date
                 有効期限：
                 = post.expirydate
