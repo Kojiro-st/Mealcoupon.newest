@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
-  validates :image, :couponcode, :shopname, :address, :expirydate, presence: true
-  belongs_to :user
+  validates :image, :couponcode, :shopname, :address, :expirydate, :foodname, presence: true
 
   mount_uploader :image, ImageUploader
   def self.search(search)
@@ -15,5 +14,7 @@ class Post < ApplicationRecord
   # after_validation :geocode, if: lambda {|obj| obj.address_changed?}
 
   geocoded_by :address, latitude: :lat, longitude: :lon
+
+  belongs_to :user
 
 end
