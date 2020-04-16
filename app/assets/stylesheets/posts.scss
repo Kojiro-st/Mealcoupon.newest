@@ -62,7 +62,6 @@ body{
       grid-column-gap: 30px;
       grid-row-gap: 90px;
       .content{
-        transition: .8s;
         width: 90%;
         margin: 0 auto;
         background-color: white;
@@ -83,6 +82,56 @@ body{
         }
         }
       }
+      // .content{
+      //   padding: 10px;
+      //   margin-bottom: 40px;
+      //   border-bottom: 1px solid #f6f6f6;
+      //   height: 300px;
+      //   width: 100%;
+      //   overflow: scroll;
+      //   display: flex;
+      //   background-color: #f9f9f9;
+      //   &__left{
+      //     width: 60%;
+      //     height: 100%;
+      //     position: relative;
+      //     &--image{
+      //       width: 100%;
+      //       height: 100%;
+      //     }
+      //     &--coupon{
+      //       z-index: 2;
+      //       position: absolute;
+      //       top: 10px;
+      //       left: 10px;
+      //       color: #FF1644;
+      //       background-color: white;
+      //       font-size: 25px;
+      //       font-weight: bold;
+      //     }
+      //   }
+      //   &__right{
+      //     width: 40%;
+      //     padding-left: 10px;
+      //     &__name{
+      //       font-size: 20px;
+      //       font-weight: bold;
+      //       color: #222222;
+      //       padding-bottom: 10px;
+      //     }
+      //     &__address{
+      //       font-size: 15px;
+      //       font-weight: normal;
+      //       color: #333333;
+      //       padding-bottom: 10px;
+      //     }
+      //     &__date{
+      //       font-size: 20px;
+      //       font-weight: normal;
+      //       color: #444444;
+      //     }
+      //   }
+      // }
     }
   }
   .form{

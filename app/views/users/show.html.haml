@@ -18,7 +18,7 @@
   = @user.name
   さんの投稿一覧
 .posts
-  .contents
+  .contents#contents
     - @posts.each do |post|
       .content
         = link_to post_path(post.id) do
