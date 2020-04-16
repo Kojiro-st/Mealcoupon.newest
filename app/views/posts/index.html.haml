@@ -14,14 +14,14 @@
 
 .shopname-form
   .shopname-form__field--top
-    店を検索
+    クーポン名を検索
   .shopname-form__field--bottom
     = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
       = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
       = form.submit "検索", class: "search-btn"
 
 .posts
-  .contents
+  .contents#contents
     - @posts.each do |post|
       .content
         = link_to post_path(post.id) do
