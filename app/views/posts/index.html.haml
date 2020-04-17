@@ -13,12 +13,28 @@
       = link_to "地図", map_posts_path, class: "header__right--btn"
 
 .shopname-form
-  .shopname-form__field--top
+  .shopname-form__field--left
     クーポン名を検索
-  .shopname-form__field--bottom
+  .shopname-form__field--right
     = form_with(url: search_posts_path, local: true, method: :get, class: "search-form") do |form|
       = form.text_field :keyword, placeholder: "投稿を検索する", class: "search-input"
       = form.submit "検索", class: "search-btn"
+
+.tag-form
+  .tag-form__top
+    .tag-form__top__left
+      タグで絞り込み
+    .tag-form__top__right
+      = form_with(url: tag_posts_path, local: true, method: :get, class: "tag-search") do |form|
+        = form.collection_select :prefecture, Prefecture.all, :name, :name
+        = form.submit "検索", class: "tag-search-btn"
+  .tag-form__bottom
+    .tag-form__bottom__left
+    .tag-form__bottom__right
+      = form_with(url: find_posts_path, local: true, method: :get, class: "tag-search") do |form|
+        = form.collection_select :foodvariety, Foodvariety.all, :name, :name
+        = form.submit "検索", class: "tag-search-btn"
+
 
 .posts
   .contents#contents
@@ -31,14 +47,20 @@
             .content__top--name
               = post.foodname
           .content__bottom
-            .content__bottom
-              .content__bottom__coupon
-                = post.couponcode
-              .content__bottom__address
-                店名：
-                = post.shopname
-              .content__bottom__date
-                有効期限：
-                = post.expirydate
+            .content__bottom__coupon
+              = post.couponcode
+            .content__bottom__address
+              店名：
+              = post.shopname
+            .content__bottom__date
+              有効期限：
+              = post.expirydate
+            .content__bottom__tag#content__bottom__tag
+              .content__bottom__tag__prefecture#content__bottom__tag__prefecture
+                場所：
+                = post.prefecture
+              .content__bottom__tag__foodvariety#content__bottom__tag__foodvariety
+                ご飯の種類：
+                = post.foodvariety
 
 = paginate(@posts)

@@ -42,4 +42,12 @@
         = form.text_field :expirydate, class: :form__text
 
       .field
+        = form.label :タグつけしてください（都道府県）
+        = form.collection_select :prefecture, Prefecture.all, :name, :name
+
+      .field
+        = form.label :タグつけしてください（ご飯の種類）
+        = form.collection_select :foodvariety, Foodvariety.all, :name, :name
+
+      .field
         = form.submit '投稿する', class: :form__btn

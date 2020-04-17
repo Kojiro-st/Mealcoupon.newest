@@ -7,6 +7,8 @@ class CreatePosts < ActiveRecord::Migration[5.2]
       t.string :address,         null: false
       t.string :expirydate,      null: false
       t.string :foodname,        null: false
+      t.string :prefecture
+      t.string :foodvariety
       t.timestamps
     end
   end
