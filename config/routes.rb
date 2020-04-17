@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
       get 'map'
+      get 'tag'
+      get 'find'
     end
   end
   resources :users, only: :show

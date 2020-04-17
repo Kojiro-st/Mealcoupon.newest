@@ -24,6 +24,22 @@ class PostsController < ApplicationController
   def map
   end
 
+  def tag
+    if params[:prefecture].present?
+      @posts = Post.where('prefecture LIKE ?', "%#{params[:prefecture]}%")
+    else
+      @posts = Post.none
+    end
+  end
+
+  def find
+    if params[:foodvariety].present?
+      @posts = Post.where('foodvariety LIKE ?', "%#{params[:foodvariety]}%")
+    else
+      @posts = Post.none
+    end
+  end
+
   def edit
     @post = Post.find(params[:id])
   end
@@ -42,7 +58,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:image, :couponcode, :shopname, :address, :expirydate, :foodname).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :couponcode, :shopname, :address, :expirydate, :foodname, :prefecture, :foodvariety).merge(user_id: current_user.id)
   end
 
 end

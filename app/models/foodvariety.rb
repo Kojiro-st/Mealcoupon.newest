@@ -1,5 +1,6 @@
 class Foodvariety < ActiveHash::Base
   self.data = [
+      {id: 0, name: 'ご飯の種類'},
       {id: 1, name: '寿司'}, {id: 2, name: '魚料理'}, {id: 3, name: '和食'},
       {id: 4, name: '麺類'}, {id: 5, name: '揚げ物'}, {id: 6, name: '丼'},
       {id: 7, name: 'お好み焼き'}, {id: 8, name: '郷土料理'}, {id: 9, name: '中華料理'},

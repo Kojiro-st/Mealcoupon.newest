@@ -37,21 +37,45 @@ body{
 .shopname-form{
   margin: 0 auto;
   padding-top: 130px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   width: 430px;
-  &__field--top{
-    text-align: center;
-    font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+  &__field--left{
+    font-size: 18px;
     float: left;
     padding-right: 20px;
   }
-  &__field--bottom{
-    text-align: center;
+  &__field--right{
     display: flex;
-    margin-left: auto;
-    margin-right: auto;
   }
 }
+
+.tag-form{
+  margin: 0 auto;
+  width: 430px;
+  &__top{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    &__left{
+      font-size: 18px;
+    }
+    &__right{
+    }
+  }
+  &__bottom{
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    &__left{
+      font-size: 18px;
+    }
+    &__right{
+    }
+  }
+}
+
   .posts{
     display: flex;
     .contents{
@@ -79,59 +103,21 @@ body{
           }
           &__date{
           }
+          #content__bottom__tag{
+            display: block;
+            color: white;
+            #content__bottom__tag__prefecture{
+              padding: 5px;
+              background-color: #FF1644;
+            }
+            #content__bottom__tag__foodvariety{
+              padding: 5px;
+              background-color: #FF1644;
+            }
+          }
         }
         }
       }
-      // .content{
-      //   padding: 10px;
-      //   margin-bottom: 40px;
-      //   border-bottom: 1px solid #f6f6f6;
-      //   height: 300px;
-      //   width: 100%;
-      //   overflow: scroll;
-      //   display: flex;
-      //   background-color: #f9f9f9;
-      //   &__left{
-      //     width: 60%;
-      //     height: 100%;
-      //     position: relative;
-      //     &--image{
-      //       width: 100%;
-      //       height: 100%;
-      //     }
-      //     &--coupon{
-      //       z-index: 2;
-      //       position: absolute;
-      //       top: 10px;
-      //       left: 10px;
-      //       color: #FF1644;
-      //       background-color: white;
-      //       font-size: 25px;
-      //       font-weight: bold;
-      //     }
-      //   }
-      //   &__right{
-      //     width: 40%;
-      //     padding-left: 10px;
-      //     &__name{
-      //       font-size: 20px;
-      //       font-weight: bold;
-      //       color: #222222;
-      //       padding-bottom: 10px;
-      //     }
-      //     &__address{
-      //       font-size: 15px;
-      //       font-weight: normal;
-      //       color: #333333;
-      //       padding-bottom: 10px;
-      //     }
-      //     &__date{
-      //       font-size: 20px;
-      //       font-weight: normal;
-      //       color: #444444;
-      //     }
-      //   }
-      // }
     }
   }
   .form{
@@ -170,6 +156,18 @@ body{
 
 .search-form{
   width: 250px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.tag-search{
+  width: 250px;
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.tag-search-btn{
+  margin-left: 10px;
 }
 
 .image2{
