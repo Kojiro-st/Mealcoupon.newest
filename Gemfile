@@ -49,6 +49,7 @@ group :development, :test do
   gem 'capistrano3-unicorn'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -66,6 +67,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'faker', "~> 2.8"
 end
 
 group :production do
@@ -87,4 +89,3 @@ gem 'kaminari'
 gem 'geocoder'
 gem 'geokit'
 gem 'active_hash'
-gem 'acts-as-taggable-on', '~> 6.0'
