@@ -136,6 +136,12 @@ body{
       height: 50px;
       margin-bottom: 20px;
     }
+    &__textarea{
+      display: block;
+      width: 100%;
+      height: 400px;
+      margin-bottom: 20px;
+    }
     &__btn{
       display: block;
       width: 30%;
@@ -191,64 +197,55 @@ body{
   padding-top: 30px;
 }
 
-.postTitle{
-  text-align: center;
-  font-size: 25px;
-  padding: 30px 0px;
-  font-weight: bold;
-  margin-top: 100px;
-}
-
-.postName{
-  text-align: center;
-  font-size: 40px;
-  font-weight: bold;
-  padding-top: 30px;
-}
-.postCoupon{
-  font-size: 30px;
-  color: #FF0000;
-  text-align: center;
-  font-weight: bold;
-}
-.postAuthor{
-  font-size: 15px;
-  color: #999;
-  text-align: center;
-}
-.postManage{
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-  padding-bottom: 30px;
-  &__edit{
-    display: block;
-    border-radius: 5px;
-    color: #ffffff;
-    background-color:#55c500;
-    padding: 0 10px;
-    text-decoration: none;
-    margin-right: 10px;
+.post{
+  margin-top: 170px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 45%;
+  .postFoodname{
+    font-size: 40px;
+    font-weight: bold;
   }
-  &__delete{
-    display: block;
-    border-radius: 5px;
-    color: #ffffff;
-    background-color:#55c500;
-    padding: 0 10px;
-    text-decoration: none;
-    margin-left: 10px;
+  .postName{
+    padding-top: 15px;
   }
-}
-
-.postDate{
-  font-size: 20px;
-  text-align: center;
-}
-.postAddress{
-  font-size: 20px;
-  text-align: center;
-  margin-bottom: 30px;
+  .postTitle{
+    margin: 80px auto;
+    width: px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+  .postManage{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    &__edit{
+      display: block;
+      border-radius: 5px;
+      color: #ffffff;
+      background-color:#FF1644;
+      padding: 0 10px;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+    &__delete{
+      display: block;
+      border-radius: 5px;
+      color: #ffffff;
+      background-color:#FF1644;
+      padding: 0 10px;
+      text-decoration: none;
+      margin-left: 10px;
+    }
+  }
+  .postTextarea__bottom{
+    margin-top: 90px;
+  }
+  .postAuthor{
+    text-align: center;
+    margin-top: 70px;
+  }
 }
 
 .pagination{
