@@ -19,27 +19,27 @@
   .content__whole
     = form_with model: @post, class: :form, local: true do |form|
       .field
-        = form.file_field :image, class: :form__title
+        = form.file_field :image, class: :form__title, id: :image
 
       .field
         店名を記入してください
-        = form.text_field :shopname,class: :form__text
+        = form.text_field :shopname,class: :form__text, id: :shopname
 
       .field
         クーポンコードを記入してください
-        = form.text_field :couponcode,class: :form__text
+        = form.text_field :couponcode,class: :form__text, id: :couponcode
 
       .field
         クーポン名を記入してください
-        = form.text_field :foodname, class: :form__text
+        = form.text_field :foodname, class: :form__text, id: :foodname
 
       .field
         住所を記入してください
-        = form.text_field :address, class: :form__text
+        = form.text_field :address, class: :form__text, id: :address
 
       .field
         有効期限を記入してください
-        = form.text_field :expirydate, class: :form__text
+        = form.text_field :expirydate, class: :form__text, id: :expirydate
 
       .field
         = form.label :タグつけしてください（都道府県）
