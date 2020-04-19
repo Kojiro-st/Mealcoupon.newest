@@ -41,6 +41,7 @@ describe PostsController, type: :controller do
     end
     it "show.html.hamlに遷移すること" do
       get :show, params: {  id: 1 }
+      expect(response).to render_template :show
     end
   end
 
@@ -53,7 +54,7 @@ describe PostsController, type: :controller do
 
   describe 'GET #tag' do
     it "@postsに正しい値が入っていること" do
-      post = create(:post)
+      # post = Post.create(couponcode: "00", shopname: "00", address: "00000000", expirydate: "00000000", foodname: "000", prefecture: "東京", foodvariety: "寿司")
       get :tag, params: { id: post }
       expect(assigns(:post)).to eq post
     end
@@ -66,13 +67,13 @@ describe PostsController, type: :controller do
 
   describe 'GET #find' do
     it "@postsに正しい値が入っていること" do
-      post = create(:post)
+      # post = Post.create(couponcode: "00", shopname: "00", address: "00000000", expirydate: "00000000", foodname: "000", prefecture: "東京", foodvariety: "寿司")
       get :find, params: { id: post }
       expect(assigns(:post)).to eq post
     end
     it "find.html.hamlに遷移すること" do
       post = create(:post)
-      get :find, params: { id: post }
+      get :find, params: { id: 1 }
       expect(response).to render_template :find
     end
   end
@@ -83,7 +84,7 @@ describe PostsController, type: :controller do
         post :create, post: attributes_for(:post)
       }.to change(Post, :count).by(1)
     end
-    it "redirects to posts#index" do
+    it "posts#indexにリダイレクトすること" do
       post :create, post: attributes_for(:post)
       expect(response).to redirect_to posts_path
     end
@@ -98,7 +99,7 @@ describe PostsController, type: :controller do
 
     it "@postが改善されること" do
       post = create(:post)
-      patch :update, id: post, post: attributes_for(:post, image: '000', couponcode: '000', shopname: '000', address: '000', expirydate: '000', foodname: '000', prefecure: '000', foodvariety: '000')
+      patch :update, id: post, post: attributes_for(:post, image: '000', couponcode: '000', shopname: '000', address: '000', expirydate: '000', foodname: '000', prefecure: '沖縄', foodvariety: 'ビアガーデン')
       post.reload
       expect(post.image).to eq("hoge")
       expect(post.couponcode).to eq("hogehoge")
@@ -106,8 +107,8 @@ describe PostsController, type: :controller do
       expect(post.address).to eq("hogehoge")
       expect(post.expirydate).to eq("hogehoge")
       expect(post.foodname).to eq("hogehoge")
-      expect(post.prefecture).to eq("hogehoge")
-      expect(post.foodvariety).to eq("hogehoge")
+      expect(post.prefecture).to eq("北海道")
+      expect(post.foodvariety).to eq("イタリアン")
     end
 
     it "posts_pathにリダイレクトすること" do
