@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  bofore_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC").page(params[:page]).per(9)
@@ -18,7 +19,6 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def map
@@ -41,20 +41,21 @@ class PostsController < ApplicationController
   end
 
   def edit
-    @post = Post.find(params[:id])
   end
 
   def update
-    post = Post.find(params[:id])
     post.update(post_params)
     redirect_to posts_path
   end
 
   def destroy
-    post = Post.find(params[:id])
     post.destroy
     redirect_to posts_path
   end
+
+  def set_post
+    @post = Post.find(params[:id])
+ end
 
   private
   def post_params
