@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2020_03_12_122043) do
     t.string "foodname", null: false
     t.string "prefecture"
     t.string "foodvariety"
+    t.text "explanation"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"

@@ -1,40 +1,5 @@
-.header
-  .header__title
-    = link_to "Mealcoupon", posts_path, class: "header__title--text"
-  .header__right
-    - if user_signed_in?
-      = link_to current_user.name, user_path(current_user), class: "header__right--btn"
-      = link_to "新規投稿", new_post_path, class: "header__right--btn"
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
-      = link_to "地図", map_posts_path, class: "header__right--btn"
-    - else
-      = link_to "ログイン", new_user_session_path, class: "header__right--btn"
-      = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
-      = link_to "地図", map_posts_path, class: "header__right--btn"
+= render partial: "posts/post"
 
 .shopname-form
 
-.posts
-  .contents#contents
-    - @posts.each do |post|
-      .content
-        = link_to post_path(post.id) do
-          .content__top
-            .content__top--image
-              = image_tag post.image.url, class: 'image2'
-            .content__top--name
-              = post.foodname
-          .content__bottom
-            .content__bottom__coupon
-              = post.couponcode
-            .content__bottom__address
-              店名：
-              = post.shopname
-            .content__bottom__date
-              有効期限：
-              = post.expirydate
-            .content__bottom__tag#content__bottom__tag
-              .content__bottom__tag__prefecture#content__bottom__tag__prefecture
-                = post.prefecture
-              .content__bottom__tag__foodvariety#content__bottom__tag__foodvariety
-                = post.foodvariety
+= render partial: "posts/postfile"

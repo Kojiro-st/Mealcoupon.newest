@@ -1,14 +1,4 @@
-.header
-  .header__title
-    = link_to "Mealcoupon", posts_path, class: "header__title--text"
-  .header__right
-    - if user_signed_in?
-      = link_to current_user.name, user_path(current_user), class: "header__right--btn"
-      = link_to "新規投稿", new_post_path, class: "header__right--btn"
-      = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
-    - else
-      = link_to "ログイン", new_user_session_path, class: "header__right--btn"
-      = link_to "新規登録", new_user_registration_path, class: "header__right--btn"
+= render partial: "posts/postpost"
 
 .contents
   .content__title
@@ -19,26 +9,27 @@
   .content__whole
     = form_with model: @post, class: :form, local: true do |form|
       .field
+        = form.label :表示したい画像を選択してください
         = form.file_field :image, class: :form__title, id: :image
 
       .field
-        店名を記入してください
+        = form.label :店名を記入してください（必須）
         = form.text_field :shopname,class: :form__text, id: :shopname
 
       .field
-        クーポンコードを記入してください
+        = form.label :クーポンコードを記入してください（必須）
         = form.text_field :couponcode,class: :form__text, id: :couponcode
 
       .field
-        クーポン名を記入してください
+        = form.label :クーポン名を記入してください（必須）
         = form.text_field :foodname, class: :form__text, id: :foodname
 
       .field
-        住所を記入してください
+        = form.label :住所を記入してください（必須）
         = form.text_field :address, class: :form__text, id: :address
 
       .field
-        有効期限を記入してください
+        = form.label :有効期限を記入してください（必須）
         = form.text_field :expirydate, class: :form__text, id: :expirydate
 
       .field
@@ -48,6 +39,10 @@
       .field
         = form.label :タグつけしてください（ご飯の種類）
         = form.collection_select :foodvariety, Foodvariety.all, :name, :name
+
+      .field
+        = form.label :商品の説明を行ってください
+        = form.text_area :explanation, class: :form__textarea, id: :explanation
 
       .field
         = form.submit '投稿する', class: :form__btn
