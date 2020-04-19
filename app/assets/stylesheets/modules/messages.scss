@@ -11,7 +11,7 @@
   display: flex;
   padding-left: 30px;
   padding-right: 30px;
-  color: white;
+  color: $Subwordwhite;
   &_left{
     font-size: 35px;
     font-weight: bold;
@@ -31,7 +31,7 @@
   background-size: cover;
   padding: 20px 60px;
   height: 600px;
-  color: black;
+  color: $wordblack;
   font-size: 23px;
   margin-top: 80px;
   &__top-content{
@@ -47,14 +47,14 @@
 }
 
 .lowercontent{
-  background-color: #f9f9f9;
+  background-color: $bodywhite;
   height: 1970px;
   padding: 20px 100px;
   &__top-content{
     padding: 30px 20px;
     &__up{
       font-size: 35px;
-      color: red;
+      color: $wordred;
       font-weight: bold;
       text-align: center;
       padding-bottom: 30px;
@@ -85,7 +85,7 @@
   &__middle-content{
     padding-top: 100px;
     font-size: 35px;
-    color: red;
+    color: $wordred;
     text-align: center;
     font-weight: bold;
     &__all{
@@ -102,7 +102,7 @@
   &__down-content{
     padding-top: 100px;
     font-size: 35px;
-    color: red;
+    color: $wordred;
     font-weight: bold;
     &__top{
       text-align: center;
@@ -117,17 +117,17 @@
           text-align: center;
           padding-left: 125px;
           &__point{
-            color: white;
+            color: $Subwordwhite;
           }
           &__number{
             text-align: center;
             &__sentence1{
-              color: black;
+              color: $wordblack;
               font-size: 25px;
               padding-top: 60px;
             }
             &__sentence2{
-              color: black;
+              color: $wordblack;
               font-size: 20px;
               font-weight: normal;
             }
@@ -139,7 +139,7 @@
 }
 
 .footer{
-  background-color: #FF1644;
+  background-color: $mainred;
   height: 200px;
   width: 100vw;
   position: relative;
@@ -147,7 +147,7 @@
   z-index: 2;
   &__head{
     font-size: 35px;
-    color: white;
+    color: $Subwordwhite;
     text-align: center;
     padding-top: 15px;
     font-weight: bold;
@@ -159,7 +159,7 @@
       position: absolute;
       bottom: 0;
       left: 20px;
-      color: white;
+      color: $Subwordwhite;
       font-size: 20px;
     }
     &__right{
@@ -167,7 +167,7 @@
       right: 20px;
       position: absolute;
       bottom: 0;
-      color: white;
+      color: $Subwordwhite;
       font-size: 20px;
       &__icon3{
         padding-left: 10px;
@@ -182,12 +182,12 @@
 
 .btn{
   display: block;
-  color: white;
+  color: $Subwordwhite;
   text-decoration: none;
 }
 
 .rounded-circle{
-  background-color: red;
+  background-color: $wordred;
   width: 50px;
   height: 50px;
   display: block;

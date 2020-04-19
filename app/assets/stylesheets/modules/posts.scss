@@ -1,13 +1,13 @@
 body{
   min-width: 650px;
-  background-color: #f9f9f9;
+  background-color: $bodywhite;
   .header{
     height: 80px;
     position: fixed;
     width: 100%;
     padding: 0 150px;
-    background-color: #FF1644;
-    color: #fff;
+    background-color: $mainred;
+    color: $wordwhite;
     display: flex;
     justify-content: space-between;
     z-index: 3;
@@ -18,7 +18,7 @@ body{
       line-height: 80px;
       &--text{
         text-decoration: none;
-        color: #fff;
+        color: $wordwhite;
       }
     }
     &__right{
@@ -28,7 +28,7 @@ body{
       &--btn{
         text-decoration: none;
         line-height: 56px;
-        color: #fff;
+        color: $wordwhite;
         margin-left:15px;
       }
     }
@@ -88,7 +88,7 @@ body{
       .content{
         width: 90%;
         margin: 0 auto;
-        background-color: white;
+        background-color: $Subwordwhite;
         border-radius: 5px;
         &__top{
           &--name{
@@ -105,14 +105,14 @@ body{
           }
           #content__bottom__tag{
             display: block;
-            color: white;
+            color: $Subwordwhite;
             #content__bottom__tag__prefecture{
               padding: 5px;
-              background-color: #FF1644;
+              background-color: $mainred;
             }
             #content__bottom__tag__foodvariety{
               padding: 5px;
-              background-color: #FF1644;
+              background-color: $mainred;
             }
           }
         }
@@ -146,8 +146,8 @@ body{
       display: block;
       width: 30%;
       margin: 15px auto 0;
-      background-color: #FF1644;
-      color: white;
+      background-color: $mainred;
+      color: $Subwordwhite;
       margin-bottom: 50px;
     }
   }
@@ -223,8 +223,8 @@ body{
     &__edit{
       display: block;
       border-radius: 5px;
-      color: #ffffff;
-      background-color:#FF1644;
+      color: $cautionwhite;
+      background-color:$mainred;
       padding: 0 10px;
       text-decoration: none;
       margin-right: 10px;
@@ -232,8 +232,8 @@ body{
     &__delete{
       display: block;
       border-radius: 5px;
-      color: #ffffff;
-      background-color:#FF1644;
+      color: $cautionwhite;
+      background-color:$mainred;
       padding: 0 10px;
       text-decoration: none;
       margin-left: 10px;
@@ -257,6 +257,6 @@ body{
 
 a{
   text-decoration: none;
-  color: black;
+  color: $wordblack;
   height: 100%;
 }
