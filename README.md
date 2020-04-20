@@ -41,11 +41,14 @@ Mealcoupon
 
 # DEMO
 トップページ
+
 ![mi-ru](https://user-images.githubusercontent.com/55870352/79718985-68dd2a80-8318-11ea-96ef-b3c1677f4673.jpg)
 
 
 記事検索機能
+
 ![ミール１](https://user-images.githubusercontent.com/55870352/79718902-2b789d00-8318-11ea-9870-9758545e70ff.png)
+
 
 # 工夫したポイント
 Google APIを用いた地図による住所検索
