@@ -15,4 +15,3 @@ CarrierWave.configure do |config|
   config.fog_directory  = 'mealcoupon'
   config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/mealcoupon'
 end
-
