@@ -1,4 +1,6 @@
 class MessagesController < ApplicationController
+  before_action :set_user
+
   def index
   end
 
@@ -9,9 +11,9 @@ class MessagesController < ApplicationController
   def create
     Message.create(message_params)
     if @message.save
-      redirect_to posts_path, notice: 'メッセージが送信されました'
+      redirect_to posts_path, notice: '注文できました'
     else
-      redirect_to posts_path, notice: 'メッセージが送信に失敗しました'
+      redirect_to posts_path, notice: '注文に失敗しました'
     end
   end
 
@@ -24,5 +26,9 @@ class MessagesController < ApplicationController
 
   def message_params
     params.require(:message).permit(:name, :ordertime, :howtoeat, :people).merge(user_id: current_user.id)
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 end

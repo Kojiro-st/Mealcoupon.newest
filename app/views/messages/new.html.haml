@@ -1,0 +1,32 @@
+= render partial: "posts/postpost"
+
+.contents
+  .content__title
+    注文内容
+
+  -# .content__image
+  -#   表示したいファイルを選択してください
+  .content__whole
+    = form_with model: @message, class: :form, local: true do |form|
+      .field
+        = form.label :名前を記入してください（必須）
+        = form.file_field :name, class: :form__title, id: :name
+
+      .field
+        = form.label :電話番号を記入しください（必須）
+        = form.text_field :phonenumber,class: :form__text, id: :phonenumber
+
+      .field
+        = form.label :来店時間を記入してください
+        = form.collection_select :ordertime, Prefecture.all, :name, :name
+
+      .field
+        = form.label :ご利用方法を選択しください
+        = form.collection_select :howtoeat, Foodvariety.all, :name, :name
+
+      .field
+        = form.label :品数を記入してください
+        = form.collection_select :people, Foodvariety.all, :name, :name
+
+      .field
+        = form.submit '注文する', class: :form__btn
