@@ -20,7 +20,7 @@ class MessagesController < ApplicationController
 
   def show
     @user = User.find(params[:user_id])
-    @message = Message.find(params[:messasge_id])
+    @message = Message.all
   end
 
   private

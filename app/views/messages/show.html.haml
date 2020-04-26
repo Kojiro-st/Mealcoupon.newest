@@ -5,8 +5,8 @@
     注文履歴
 
 .messages
-  .messages
-    - @messages.each do |message|
+  .message
+    - @message.each do |message|
       .message
         .message__name
           注文者：
@@ -16,7 +16,8 @@
           = message.phonenumber
         .message__ordertime
           受け取り時間：
-          = message.ordertime
+          = message.ordertimeleft
+          = message.ordertimeright
         .message__howtoeat
           利用方法：
           = message.howtoeat
