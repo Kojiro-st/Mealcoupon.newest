@@ -3,7 +3,8 @@ class CreateMessages < ActiveRecord::Migration[5.2]
     create_table :messages do |t|
       t.string :name
       t.string :phonenumber
-      t.string :ordertime
+      t.string :ordertimeleft
+      t.string :ordertimeright
       t.string :howtoeat
       t.string :people
       t.references :user, foreign_key: true

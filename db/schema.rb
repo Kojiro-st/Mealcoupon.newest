@@ -15,7 +15,8 @@ ActiveRecord::Schema.define(version: 2020_04_25_034906) do
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "phonenumber"
-    t.string "ordertime"
+    t.string "ordertimeleft"
+    t.string "ordertimeright"
     t.string "howtoeat"
     t.string "people"
     t.bigint "user_id"

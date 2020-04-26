@@ -24,3 +24,5 @@
     .postManage
       = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
       = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
+  .postBuy
+    = link_to "注文する", new_user_message_path(@post.user_id), class: "postManage__edit"

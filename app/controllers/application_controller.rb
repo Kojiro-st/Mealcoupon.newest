@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  config.i18n.default_locale = :ja
+  # config.i18n.default_locale = :ja
 
   protected
   def configure_permitted_parameters
