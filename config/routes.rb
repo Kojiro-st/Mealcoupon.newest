@@ -11,6 +11,7 @@ Rails.application.routes.draw do
       get 'find'
     end
   end
-  resources :users, only: :show
-  resources :messages, only: :index
+  resources :users, only: :show do
+    resources :messages, only: [:index, :new, :create, :show]
+  end
 end

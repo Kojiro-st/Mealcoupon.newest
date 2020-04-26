@@ -18,6 +18,10 @@
 .postTitle
   = @user.name
   さんの投稿一覧
+
+.order
+  = link_to "注文履歴一覧", user_message_path(@user.id), class: "header__right--btn"
+
 .posts
   .contents#contents
     - @posts.each do |post|
