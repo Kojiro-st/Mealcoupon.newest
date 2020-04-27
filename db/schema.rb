@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2020_04_25_034906) do
     t.string "ordertimeright"
     t.string "howtoeat"
     t.string "people"
+    t.string "couponcode"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

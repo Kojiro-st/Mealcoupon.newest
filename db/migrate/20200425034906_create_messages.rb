@@ -7,6 +7,7 @@ class CreateMessages < ActiveRecord::Migration[5.2]
       t.string :ordertimeright
       t.string :howtoeat
       t.string :people
+      t.string :couponcode
       t.references :user, foreign_key: true
       t.timestamps
     end

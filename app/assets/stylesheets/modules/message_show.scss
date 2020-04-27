@@ -1,0 +1,47 @@
+.orders{
+  margin-top: 150px;
+  font-size: 30px;
+  font-weight: bold;
+  width: 45%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.messages{
+  width: 40%;
+  margin: 50px auto;
+  & .message-all{
+    font-size: 20px;
+    & .message{
+      margin-top: 30px;
+      background-color: $Subwordwhite;
+      padding: 15px 15px;
+      & .message-btn{
+        display: flex;
+        justify-content: space-around;
+        &__left{
+          background-color: $mainred;
+          padding: 5px 5px;
+          color: $Subwordwhite;
+          font-size: 20px;
+          height: 40px;
+          margin-top: 20px;
+          width: 130px;
+          cursor: pointer;
+        }
+        &__right{
+          background-color: $wordblack;
+          color: $Subwordwhite;
+          padding: 5px 5px;
+          color: $Subwordwhite;
+          font-size: 20px;
+          text-align: center;
+          height: 40px;
+          margin-top: 20px;
+          width: 130px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

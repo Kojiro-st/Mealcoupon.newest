@@ -9,6 +9,10 @@
     -# = form_with(url: posts_path, local: true, method: :get, class: "form") do |form|
     = form_with model: @message, class: :form,url: :user_messages, local: true do |form|
       .field
+        = form.label :クーポンコードを記入してください（必須）
+        = form.text_field :couponcode, class: :form__text, id: :couponcode
+
+      .field
         = form.label :名前を記入してください（必須）
         = form.text_field :name, class: :form__text, id: :name
 
@@ -19,7 +23,7 @@
       .field
         = form.label :受け取り希望の時間を記入してください（必須）
       .field_select
-        = form.select :ordertimeleft, ['0時','1時', '2時','3時','4時','5時','6時','7時','8時','9時','10時','11時','12時','13','14', '15','16','17','18','19','20','21','22','23']
+        = form.select :ordertimeleft, ['0時','1時', '2時','3時','4時','5時','6時','7時','8時','9時','10時','11時','12時','13時','14時', '15時','16時','17時','18時','19時','20時','21時','22時','23時']
         = form.select :ordertimeright, ['00分', '05分','10分','15分','20分','25分','30分','35分','40分','45分','50分','55分']
 
       .field

@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
   end
 
   def show
+    @posts = Post.where('couponcode LIKE ?', "%#{params[:id]}%")
     @user = User.find(params[:user_id])
     @message = Message.all
   end
@@ -26,6 +27,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:name, :phonenumber, :ordertimeleft, :ordertimeright, :howtoeat, :people).merge(user_id: current_user.id)
+    params.require(:message).permit(:name, :phonenumber, :ordertimeleft, :ordertimeright, :howtoeat, :people, :couponcode).merge(user_id: current_user.id)
   end
 end

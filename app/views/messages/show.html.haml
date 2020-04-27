@@ -1,16 +1,19 @@
 = render partial: "posts/postpost"
 
-.contents
-  .content__title
+.orders
+  .order__title
     注文履歴
 
 .messages
-  .message
+  .message-all
     - @message.each do |message|
       .message
         .message__name
           注文者：
           = message.name
+        .message__code
+          クーポンコード：
+          = message.couponcode
         .message__phonenumber
           電話番号：
           = message.phonenumber
@@ -22,5 +25,5 @@
           利用方法：
           = message.howtoeat
         .message__people
-          注文数
+          注文数：
           = message.people
