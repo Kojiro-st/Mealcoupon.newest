@@ -2,8 +2,11 @@
   .header_left
     Mealcoupon
   .header_right
-    = link_to posts_path, class: "btn" do
-      use coupons
+    - if user_signed_in?
+      = link_to "use coupons", posts_path, class: "btn"
+    - else
+      = link_to "新規登録", new_user_registration_path, class: "btn"
+      = link_to "ログイン", new_user_session_path, class: "btn"
 
 .uppercontent
   .uppercontent__top-content
