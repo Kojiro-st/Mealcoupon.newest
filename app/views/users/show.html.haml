@@ -9,12 +9,12 @@
 
 .shopname-form
 
-.postTitle
-  = @user.name
-  さんの投稿一覧
-
-.order
-  = link_to "注文履歴一覧", user_message_path(@user.id), class: "header__right--btn"
+.title
+  .title__top
+    = @user.name
+    さんの投稿一覧
+  .title__bottom
+    = link_to "→注文履歴一覧に飛ぶ", user_message_path(@user.id), class: "order--btn"
 
 .posts
   .contents#contents

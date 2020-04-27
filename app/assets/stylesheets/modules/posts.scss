@@ -253,6 +253,13 @@ body{
     text-align: center;
     margin-top: 70px;
   }
+  // .postBuy{
+  //   color: $Subwordwhite;
+  //   background-color: $mainred;
+  //   text-align: center;
+  //   width: 40%;
+  //   margin: 40px auto;
+  // }
 }
 
 .pagination{
@@ -266,4 +273,25 @@ a{
   text-decoration: none;
   color: $wordblack;
   height: 100%;
+}
+
+.postManage__order{
+  color: $Subwordwhite;
+    background-color: $mainred;
+    text-align: center;
+    width: 40%;
+    margin: 60px auto;
+    display: block;
+}
+
+.title{
+  width: 90%;
+  margin: 0 auto;
+  &__top{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  &__bottom{
+    font-size: 14px;
+  }
 }
