@@ -21,7 +21,8 @@ class MessagesController < ApplicationController
   def show
     @posts = Post.where('couponcode LIKE ?', "%#{params[:id]}%")
     @user = User.find(params[:user_id])
-    @message = Message.all
+    # @message = Message.all
+    @message = @user.messages
   end
 
   private
