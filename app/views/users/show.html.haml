@@ -14,7 +14,7 @@
     = @user.name
     さんの投稿一覧
   .title__bottom
-    = link_to "→注文履歴一覧に飛ぶ", user_message_path(@user.id), class: "order--btn"
+    = link_to "→注文履歴一覧に飛ぶ", post_message_path(@post), class: "order--btn"
 
 .posts
   .contents#contents
@@ -27,8 +27,6 @@
             .content__top--name
               = post.foodname
           .content__bottom
-            .content__bottom__coupon
-              = post.couponcode
             .content__bottom__address
               店名：
               = post.shopname

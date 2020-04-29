@@ -197,3 +197,45 @@
   width: 300px;
   height: 200px;
 }
+
+.field_select{
+  margin: auto;
+  width: 60%;
+  margin-bottom: 20px;
+  .time{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+  }
+}
+
+.select_margin{
+  margin-bottom: 40px;
+}
+
+.select_margin2{
+  margin-bottom: 40px;
+  width: 60%;
+  margin: auto;
+}
+
+.select_margin3{
+  width: 100px;
+}
+
+.others{
+  .field_others{
+    display: flex;
+    width: 60%;
+    margin: 15px auto;
+    .field_right{
+      width: 100px;
+    }
+  }
+}
+
+.field_label{
+  padding-top: 30px;
+  width: 60%;
+  margin: auto;
+}

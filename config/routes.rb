@@ -10,8 +10,7 @@ Rails.application.routes.draw do
       get 'tag'
       get 'find'
     end
+      resources :messages, only: [:index, :new, :create, :show]
   end
-  resources :users, only: :show do
-    resources :messages, only: [:index, :new, :create, :show]
-  end
+  resources :users, only: :show
 end

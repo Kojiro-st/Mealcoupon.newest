@@ -19,20 +19,23 @@ ActiveRecord::Schema.define(version: 2020_04_25_034906) do
     t.string "ordertimeright"
     t.string "howtoeat"
     t.string "people"
-    t.string "couponcode"
-    t.bigint "user_id"
+    t.string "couponcodenumber1"
+    t.string "couponcodenumber2"
+    t.string "couponcodenumber3"
+    t.integer "post_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "image"
-    t.string "couponcode", null: false
     t.string "shopname", null: false
     t.string "address", null: false
     t.string "expirydate", null: false
     t.string "foodname", null: false
+    t.string "othercoupon1"
+    t.string "othercoupon2"
+    t.string "othercoupon3"
     t.string "prefecture"
     t.string "foodvariety"
     t.text "explanation"
@@ -54,5 +57,4 @@ ActiveRecord::Schema.define(version: 2020_04_25_034906) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "messages", "users"
 end

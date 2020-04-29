@@ -6,12 +6,6 @@
   .postName
     店名：
     = @post.shopname
-  .postCode
-    クーポンコード：
-    = @post.id
-  .postCoupon
-    クーポン内容：
-    = @post.couponcode
   .postDate
     有効期限：
     = @post.expirydate
@@ -22,10 +16,21 @@
     = image_tag @post.image.url
   .postTextarea__bottom
     = @post.explanation
+  .postOthercoupontop
+    他のおすすめのクーポン
+  .postOthercoupon
+    １：
+    = @post.othercoupon1
+  .postOthercoupon
+    ２：
+    = @post.othercoupon2
+  .postOthercoupon
+    ３：
+    = @post.othercoupon3
   .postAuthor
   - if user_signed_in? && current_user.id == @post.user_id
     .postManage
       = link_to "編集", edit_post_path(@post.id), class: "postManage__edit"
       = link_to "削除", post_path(@post.id), method: :delete, class: "postManage__delete"
   .postBuy
-    = link_to "注文する", new_user_message_path(@post.user_id), class: "postManage__order"
+    = link_to "注文する", new_post_message_path(@post.id), class: "postManage__order"
