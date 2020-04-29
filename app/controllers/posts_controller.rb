@@ -58,7 +58,7 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:image, :couponcode, :shopname, :address, :expirydate, :foodname, :prefecture, :foodvariety).merge(user_id: current_user.id)
+    params.require(:post).permit(:image, :othercoupon1, :othercoupon2, :othercoupon3, :shopname, :address, :expirydate, :foodname, :prefecture, :foodvariety, :explanation).merge(user_id: current_user.id)
   end
 
 end

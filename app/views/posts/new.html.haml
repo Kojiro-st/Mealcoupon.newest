@@ -9,7 +9,7 @@
   .content__whole
     = form_with model: @post, class: :form, local: true do |form|
       .field
-        = form.label :表示したい画像を選択してください
+        = form.label :表示したいクーポン画像を選択してください
         = form.file_field :image, class: :form__title, id: :image
 
       .field
@@ -17,12 +17,20 @@
         = form.text_field :shopname,class: :form__text, id: :shopname
 
       .field
-        = form.label :クーポンコードを記入してください（必須）
-        = form.text_field :couponcode,class: :form__text, id: :couponcode
-
-      .field
         = form.label :クーポン名を記入してください（必須）
         = form.text_field :foodname, class: :form__text, id: :foodname
+
+      .field
+        = form.label :他のおすすめのクーポンを記入してください（任意）
+        = form.text_field :othercoupon1, class: :form__text, id: :othercoupon1
+      
+      .field
+        = form.label :他のおすすめのクーポンを記入してください（任意）
+        = form.text_field :othercoupon2, class: :form__text, id: :othercoupon1
+      
+      .field
+        = form.label :他のおすすめのクーポンを記入してください（任意）
+        = form.text_field :othercoupon3, class: :form__text, id: :othercoupon1
 
       .field
         = form.label :住所を記入してください（必須）

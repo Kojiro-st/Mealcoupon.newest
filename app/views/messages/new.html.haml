@@ -6,12 +6,7 @@
 
   .content__all
   .content__whole
-    -# = form_with(url: posts_path, local: true, method: :get, class: "form") do |form|
-    = form_with model: @message, class: :form,url: :user_messages, local: true do |form|
-      .field
-        = form.label :クーポンコードを記入してください（必須）
-        = form.text_field :couponcode, class: :form__text, id: :couponcode
-
+    = form_with model: [@message,@post], class: :form,url: :posts, local: true do |form|
       .field
         = form.label :名前を記入してください（必須）
         = form.text_field :name, class: :form__text, id: :name
@@ -31,8 +26,21 @@
         = form.select :howtoeat, ['お持ち帰り', '店内'], {include_blank: '選択'}, class: 'sample'
 
       .field
-        = form.label :品数を記入してください（必須）
+        = form.label :オーダーするクーポンの品数を記入してください（必須）
         = form.select :people, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
+
+      .others
+        .explain
+          他のおすすめのクーポンもオーダーする場合は以下を記入してください。
+        .field
+          = form.label :１：
+          = form.select :couponcodenumber1, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
+        .field
+          = form.label :２：
+          = form.select :couponcodenumber2, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
+        .field
+          = form.label :３：
+          = form.select :couponcodenumber3, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
 
       .field
         = form.submit '注文する', class: :form__btn

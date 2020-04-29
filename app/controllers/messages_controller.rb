@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
   end
 
   def new
-    @post = Post.find(params[:user_id])
+    @post = Post.find(params[:post_id])
     @message = Message.new
   end
 
@@ -26,6 +26,6 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:name, :phonenumber, :ordertimeleft, :ordertimeright, :howtoeat, :people, :couponcode).merge(user_id: current_user.id)
+    params.require(:message).permit(:name, :phonenumber, :ordertimeleft, :ordertimeright, :howtoeat, :people, :couponcodenumber1, :couponcodenumber2, :couponcodenumber3).merge(post_id: params[:post_id])
   end
 end
