@@ -18,29 +18,38 @@
       .field
         = form.label :受け取り希望の時間を記入してください（必須）
       .field_select
-        = form.select :ordertimeleft, ['0時','1時', '2時','3時','4時','5時','6時','7時','8時','9時','10時','11時','12時','13時','14時', '15時','16時','17時','18時','19時','20時','21時','22時','23時']
-        = form.select :ordertimeright, ['00分', '05分','10分','15分','20分','25分','30分','35分','40分','45分','50分','55分']
+        .time
+          = form.select :ordertimeleft, ['0時','1時', '2時','3時','4時','5時','6時','7時','8時','9時','10時','11時','12時','13時','14時', '15時','16時','17時','18時','19時','20時','21時','22時','23時'],class: :select_margin
+          = form.select :ordertimeright, ['00分', '05分','10分','15分','20分','25分','30分','35分','40分','45分','50分','55分'],class: :select_margin
 
       .field
         = form.label :ご利用方法を選択しください（必須）
-        = form.select :howtoeat, ['お持ち帰り', '店内'], {include_blank: '選択'}, class: 'sample'
+      .select_margin2
+        = form.select :howtoeat, ['お持ち帰り', '店内'], {include_blank: '選択'}, class: 'sample',class: :select_margin3
 
-      .field
+      .field_label
         = form.label :オーダーするクーポンの品数を記入してください（必須）
-        = form.select :people, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
+      .select_margin2
+        = form.select :people, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample',class: :select_margin3
 
       .others
-        .explain
+        .field_label
           他のおすすめのクーポンもオーダーする場合は以下を記入してください。
-        .field
-          = form.label :１：
-          = form.select :couponcodenumber1, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
-        .field
-          = form.label :２：
-          = form.select :couponcodenumber2, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
-        .field
-          = form.label :３：
-          = form.select :couponcodenumber3, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
+        .field_others
+          .field_left
+            = form.label :１：
+          .field_right
+            = form.select :couponcodenumber1, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
+        .field_others
+          .field_left
+            = form.label :２：
+          .field_right
+            = form.select :couponcodenumber2, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
+        .field_others
+          .field_left
+            = form.label :３：
+          .field_right
+            = form.select :couponcodenumber3, ['1個', '2個','3個','4個','5個','6個','7個','8個','9個','10個'], {include_blank: '選択'}, class: 'sample'
 
       .field
         = form.submit '注文する', class: :form__btn

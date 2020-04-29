@@ -14,19 +14,19 @@
     = @post.address
   .postTitle
     = image_tag @post.image.url
-  .postOthercoupon
-    他のおすすめのクーポン
-  .postOthercoupon1
-    １：
-    = @post.othercoupon1
-  .postOthercoupon2
-    ２：
-    = @post.othercoupon2
-  .postOthercoupon3
-    ３：
-    = @post.othercoupon3
   .postTextarea__bottom
     = @post.explanation
+  .postOthercoupontop
+    他のおすすめのクーポン
+  .postOthercoupon
+    １：
+    = @post.othercoupon1
+  .postOthercoupon
+    ２：
+    = @post.othercoupon2
+  .postOthercoupon
+    ３：
+    = @post.othercoupon3
   .postAuthor
   - if user_signed_in? && current_user.id == @post.user_id
     .postManage
