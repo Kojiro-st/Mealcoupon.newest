@@ -6,7 +6,7 @@
 
   .content__all
   .content__whole
-    = form_with model: [@message,@post], class: :form,url: :posts, local: true do |form|
+    = form_with model: [@post,@message], class: :form, local: true do |form|
       .field
         = form.label :名前を記入してください（必須）
         = form.text_field :name, class: :form__text, id: :name

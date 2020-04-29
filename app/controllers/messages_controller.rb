@@ -19,7 +19,7 @@ class MessagesController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:user_id])
+    @post = Post.find(params[:post_id])
     @message = @post.messages
   end
 
