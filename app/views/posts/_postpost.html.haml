@@ -3,6 +3,6 @@
     = link_to "Mealcoupon", root_path, class: "header__title--text"
   .header__right
     = link_to "use coupons", posts_path, class: "header__right--btn"
-    = link_to current_user.name, user_path(current_user), class: "header__right--btn"
+    = link_to "user", user_path(current_user), class: "header__right--btn"
     = link_to "新規投稿", new_post_path, class: "header__right--btn"
     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right--btn"
