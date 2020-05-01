@@ -242,7 +242,6 @@ body{
     padding-bottom: 30px;
     &__edit{
       display: block;
-      border-radius: 5px;
       color: $cautionwhite;
       background-color:$mainred;
       padding: 0 10px;
@@ -251,7 +250,6 @@ body{
     }
     &__delete{
       display: block;
-      border-radius: 5px;
       color: $cautionwhite;
       background-color:$mainred;
       padding: 0 10px;
@@ -273,7 +271,6 @@ body{
 
 .postMessageclass{
   display: block;
-  border-radius: 5px;
   background-color: $mainred;
   color: $cautionwhite;
   padding: 0 10px;
