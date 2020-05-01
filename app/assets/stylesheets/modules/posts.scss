@@ -259,6 +259,9 @@ body{
       margin-left: 10px;
     }
   }
+  .postMessage{
+    margin: 0 auto;
+  }
   .postTextarea__bottom{
     margin-top: 90px;
   }
@@ -266,6 +269,18 @@ body{
     text-align: center;
     margin-top: 70px;
   }
+}
+
+.postMessageclass{
+  display: block;
+  border-radius: 5px;
+  background-color: $mainred;
+  color: $cautionwhite;
+  padding: 0 10px;
+  text-decoration: none;
+  margin: auto;
+  width: 125px;
+  text-align: center;
 }
 
 .pagination{
