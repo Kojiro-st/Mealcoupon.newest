@@ -1,12 +1,12 @@
 class CreateMessages < ActiveRecord::Migration[5.2]
   def change
     create_table :messages do |t|
-      t.string :name
-      t.string :phonenumber
-      t.string :ordertimeleft
-      t.string :ordertimeright
-      t.string :howtoeat
-      t.string :people
+      t.string :name,                null: false
+      t.string :phonenumber,         null: false
+      t.string :ordertimeleft,       null: false
+      t.string :ordertimeright,      null: false
+      t.string :howtoeat,            null: false
+      t.string :people,              null: false
       t.string :couponcodenumber1
       t.string :couponcodenumber2
       t.string :couponcodenumber3

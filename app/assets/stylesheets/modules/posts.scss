@@ -242,7 +242,6 @@ body{
     padding-bottom: 30px;
     &__edit{
       display: block;
-      border-radius: 5px;
       color: $cautionwhite;
       background-color:$mainred;
       padding: 0 10px;
@@ -251,13 +250,15 @@ body{
     }
     &__delete{
       display: block;
-      border-radius: 5px;
       color: $cautionwhite;
       background-color:$mainred;
       padding: 0 10px;
       text-decoration: none;
       margin-left: 10px;
     }
+  }
+  .postMessage{
+    margin: 0 auto;
   }
   .postTextarea__bottom{
     margin-top: 90px;
@@ -266,6 +267,17 @@ body{
     text-align: center;
     margin-top: 70px;
   }
+}
+
+.postMessageclass{
+  display: block;
+  background-color: $mainred;
+  color: $cautionwhite;
+  padding: 0 10px;
+  text-decoration: none;
+  margin: auto;
+  width: 125px;
+  text-align: center;
 }
 
 .pagination{

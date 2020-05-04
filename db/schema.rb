@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_25_034906) do
+ActiveRecord::Schema.define(version: 2020_04_30_032623) do
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name"
-    t.string "phonenumber"
-    t.string "ordertimeleft"
-    t.string "ordertimeright"
-    t.string "howtoeat"
-    t.string "people"
+    t.string "name", null: false
+    t.string "phonenumber", null: false
+    t.string "ordertimeleft", null: false
+    t.string "ordertimeright", null: false
+    t.string "howtoeat", null: false
+    t.string "people", null: false
     t.string "couponcodenumber1"
     t.string "couponcodenumber2"
     t.string "couponcodenumber3"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 2020_04_25_034906) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.string "uid"
+    t.string "provider"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

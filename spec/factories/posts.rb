@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :post do
-    couponcode            {"00000000"}
     shopname              {"00000000"}
     address               {"00000000"}
     expirydate            {"00000000"}

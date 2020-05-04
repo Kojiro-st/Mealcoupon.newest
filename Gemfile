@@ -51,6 +51,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rails-controller-testing'
   gem 'capybara', '>= 2.15'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -89,3 +90,5 @@ gem 'kaminari'
 gem 'geocoder'
 gem 'geokit'
 gem 'active_hash'
+gem 'omniauth'
+gem 'omniauth-facebook'
