@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where("shopname LIKE ?", "%#{params[:shopname]}%")
+    @posts = Post.where('foodname LIKE ?', "%#{params[:foodname]}%")
   end
 
   def show
