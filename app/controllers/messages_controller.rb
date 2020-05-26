@@ -9,13 +9,19 @@ class MessagesController < ApplicationController
   end
 
   def create
-    Message.create(message_params)
-    redirect_to posts_path
+    # Message.create(message_params)
+    # redirect_to posts_path
     # if @message.save
     #   redirect_to posts_path, notice: '注文できました'
     # else
     #   redirect_to posts_path, notice: '注文に失敗しました'
     # end
+    if Message.create(message_params)
+      redirect_to posts_path, notice: '注文できました。'
+    else
+      flash.now[:alert] = '注文できませんでした。'
+      redirect_to posts_path, notice: '注文に失敗しました'
+    end
   end
 
   def show
