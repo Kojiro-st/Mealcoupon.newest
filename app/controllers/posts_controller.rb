@@ -14,7 +14,11 @@ class PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.where('foodname LIKE ?', "%#{params[:foodname]}%")
+    if params[:foodname].present?
+      @posts = Post.where('foodname LIKE ?', "%#{params[:foodname]}%")
+    else
+      @posts = Post.none
+    end
   end
 
   def show
